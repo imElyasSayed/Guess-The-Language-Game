@@ -1,0 +1,23 @@
+{
+  "lang_id": "ja_jp",
+  "language": "Japanese",
+  "country": "Japan",
+  "continent": "Asia",
+  "forbidden": [
+    "japanese",
+    "nihongo",
+    "japan",
+    "nippon",
+    "nihon",
+    "tokyo",
+    "yen",
+    "kanji",
+    "hiragana",
+    "katakana",
+    "samurai",
+    "mount fuji",
+    "fuji",
+    "kimono",
+    "sushi"
+  ]
+}

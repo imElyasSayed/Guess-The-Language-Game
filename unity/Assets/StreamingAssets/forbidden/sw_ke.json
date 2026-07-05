@@ -1,0 +1,19 @@
+{
+  "lang_id": "sw_ke",
+  "language": "Swahili",
+  "country": "Kenya",
+  "continent": "Africa",
+  "forbidden": [
+    "swahili",
+    "kiswahili",
+    "kenya",
+    "kenyan",
+    "nairobi",
+    "shilling",
+    "maasai",
+    "masai",
+    "serengeti",
+    "kilimanjaro",
+    "safari"
+  ]
+}

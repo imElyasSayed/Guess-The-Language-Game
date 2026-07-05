@@ -1,0 +1,5 @@
+Placeholder. Copy the prep pipeline's out/clips/*.ogg files here.
+
+The sample clips.json points at paths like clips/es_419_00001.ogg. Until the real
+Ogg files are copied in, the game runs and scores fine but clip playback reports a
+"clip not found" status in the UI (by design — the data path is proven separately).

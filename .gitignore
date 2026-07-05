@@ -1,0 +1,37 @@
+# ---- macOS ----
+.DS_Store
+
+# ---- Python (prep) ----
+prep/.venv/
+__pycache__/
+*.pyc
+# generated prep output (clips/game.db/forbidden are staged into unity/ instead)
+prep/out/
+
+# ---- Node (relay) ----
+relay/node_modules/
+relay/dist/
+.env
+.env.*
+!.env.example
+
+# ---- Unity ----
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]serSettings/
+unity/[Mm]emoryCaptures/
+unity/.vs/
+unity/import.log
+unity/EditModeResults.xml
+# Unity-generated solution/project files
+unity/*.csproj
+unity/*.sln
+unity/*.user
+
+# ---- dotnet (temp test harness, if any lands here) ----
+bin/
+obj/

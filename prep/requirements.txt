@@ -1,0 +1,4 @@
+datasets
+soundfile
+numpy
+pytest

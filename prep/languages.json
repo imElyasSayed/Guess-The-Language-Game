@@ -1,0 +1,41 @@
+{
+  "clips_per_language": 30,
+  "languages": [
+    {
+      "lang_id": "es_419",
+      "language": "Spanish",
+      "country": "Mexico",
+      "continent": "North America",
+      "difficulty": "common",
+      "forbidden": [
+        "Spanish", "Espanol", "Español", "Castilian",
+        "Mexico", "Mexican", "Mexicano", "Mexico City",
+        "Peso", "Aztec", "Maya", "Mayan", "Spain", "Latin America"
+      ]
+    },
+    {
+      "lang_id": "ja_jp",
+      "language": "Japanese",
+      "country": "Japan",
+      "continent": "Asia",
+      "difficulty": "common",
+      "forbidden": [
+        "Japanese", "Nihongo", "Japan", "Nippon", "Nihon",
+        "Tokyo", "Yen", "Kanji", "Hiragana", "Katakana",
+        "Samurai", "Mount Fuji", "Fuji", "Kimono", "Sushi"
+      ]
+    },
+    {
+      "lang_id": "sw_ke",
+      "language": "Swahili",
+      "country": "Kenya",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Swahili", "Kiswahili", "Kenya", "Kenyan",
+        "Nairobi", "Shilling", "Maasai", "Masai",
+        "Serengeti", "Kilimanjaro", "Safari"
+      ]
+    }
+  ]
+}

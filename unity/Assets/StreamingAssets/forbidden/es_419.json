@@ -1,0 +1,21 @@
+{
+  "lang_id": "es_419",
+  "language": "Spanish",
+  "country": "Mexico",
+  "continent": "North America",
+  "forbidden": [
+    "spanish",
+    "espanol",
+    "castilian",
+    "mexico",
+    "mexican",
+    "mexicano",
+    "mexico city",
+    "peso",
+    "aztec",
+    "maya",
+    "mayan",
+    "spain",
+    "latin america"
+  ]
+}

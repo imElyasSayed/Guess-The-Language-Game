@@ -1,0 +1,25 @@
+{
+  "name": "say-again-oracle-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hosted oracle relay for the \"Say Again?\" game — answers players' questions in the voice of The Keep without leaking the hidden language/country.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/dev.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
