@@ -7,6 +7,9 @@ __pycache__/
 *.pyc
 # generated prep output (clips/game.db/forbidden are staged into unity/ instead)
 prep/out/
+# generated exploratory notebook output
+notebooks/out/
+notebooks/.ipynb_checkpoints/
 
 # ---- Node (relay) ----
 relay/node_modules/
@@ -14,7 +17,7 @@ relay/dist/
 .env
 .env.*
 !.env.example
-
+notebooks/.venv
 # ---- Unity ----
 unity/[Ll]ibrary/
 unity/[Tt]emp/

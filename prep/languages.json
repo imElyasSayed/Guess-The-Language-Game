@@ -1,5 +1,5 @@
 {
-  "clips_per_language": 30,
+  "clips_per_language": 15,
   "languages": [
     {
       "lang_id": "es_419",
@@ -8,9 +8,20 @@
       "continent": "North America",
       "difficulty": "common",
       "forbidden": [
-        "Spanish", "Espanol", "Español", "Castilian",
-        "Mexico", "Mexican", "Mexicano", "Mexico City",
-        "Peso", "Aztec", "Maya", "Mayan", "Spain", "Latin America"
+        "Spanish",
+        "Espanol",
+        "Español",
+        "Castilian",
+        "Mexico",
+        "Mexican",
+        "Mexicano",
+        "Mexico City",
+        "Peso",
+        "Aztec",
+        "Maya",
+        "Mayan",
+        "Spain",
+        "Latin America"
       ]
     },
     {
@@ -20,9 +31,21 @@
       "continent": "Asia",
       "difficulty": "common",
       "forbidden": [
-        "Japanese", "Nihongo", "Japan", "Nippon", "Nihon",
-        "Tokyo", "Yen", "Kanji", "Hiragana", "Katakana",
-        "Samurai", "Mount Fuji", "Fuji", "Kimono", "Sushi"
+        "Japanese",
+        "Nihongo",
+        "Japan",
+        "Nippon",
+        "Nihon",
+        "Tokyo",
+        "Yen",
+        "Kanji",
+        "Hiragana",
+        "Katakana",
+        "Samurai",
+        "Mount Fuji",
+        "Fuji",
+        "Kimono",
+        "Sushi"
       ]
     },
     {
@@ -32,10 +55,1028 @@
       "continent": "Africa",
       "difficulty": "all",
       "forbidden": [
-        "Swahili", "Kiswahili", "Kenya", "Kenyan",
-        "Nairobi", "Shilling", "Maasai", "Masai",
-        "Serengeti", "Kilimanjaro", "Safari"
+        "Swahili",
+        "Kiswahili",
+        "Kenya",
+        "Kenyan",
+        "Nairobi",
+        "Shilling",
+        "Maasai",
+        "Masai",
+        "Serengeti",
+        "Kilimanjaro",
+        "Safari"
       ]
+    },
+    {
+      "lang_id": "af_za",
+      "language": "Afrikaans",
+      "country": "South Africa",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Afrikaans",
+        "South Africa",
+        "South African",
+        "Pretoria",
+        "Cape Town",
+        "Rand"
+      ]
+    },
+    {
+      "lang_id": "am_et",
+      "language": "Amharic",
+      "country": "Ethiopia",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Amharic", "Ethiopia", "Ethiopian", "Addis Ababa", "Birr"]
+    },
+    {
+      "lang_id": "ar_eg",
+      "language": "Arabic",
+      "country": "Egypt",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Arabic",
+        "Egyptian",
+        "Egypt",
+        "Cairo",
+        "Pound",
+        "Pyramid",
+        "Pyramids",
+        "Nile",
+        "Sphinx",
+        "Giza"
+      ]
+    },
+    {
+      "lang_id": "as_in",
+      "language": "Assamese",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Assamese", "Assam", "India", "Indian", "Guwahati", "Rupee"]
+    },
+    {
+      "lang_id": "ast_es",
+      "language": "Asturian",
+      "country": "Spain",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": [
+        "Asturian",
+        "Asturias",
+        "Spain",
+        "Spanish",
+        "Oviedo",
+        "Euro"
+      ]
+    },
+    {
+      "lang_id": "az_az",
+      "language": "Azerbaijani",
+      "country": "Azerbaijan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Azerbaijani", "Azeri", "Azerbaijan", "Baku", "Manat"]
+    },
+    {
+      "lang_id": "be_by",
+      "language": "Belarusian",
+      "country": "Belarus",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Belarusian", "Belarus", "Minsk", "Ruble"]
+    },
+    {
+      "lang_id": "bg_bg",
+      "language": "Bulgarian",
+      "country": "Bulgaria",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Bulgarian", "Bulgaria", "Sofia", "Lev"]
+    },
+    {
+      "lang_id": "bn_in",
+      "language": "Bengali",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Bengali",
+        "Bangla",
+        "India",
+        "Indian",
+        "Kolkata",
+        "Rupee",
+        "Bangladesh"
+      ]
+    },
+    {
+      "lang_id": "bs_ba",
+      "language": "Bosnian",
+      "country": "Bosnia and Herzegovina",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Bosnian", "Bosnia", "Herzegovina", "Sarajevo", "Mark"]
+    },
+    {
+      "lang_id": "ca_es",
+      "language": "Catalan",
+      "country": "Spain",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Catalan", "Catalonia", "Barcelona", "Spain", "Euro"]
+    },
+    {
+      "lang_id": "ceb_ph",
+      "language": "Cebuano",
+      "country": "Philippines",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Cebuano",
+        "Cebu",
+        "Philippines",
+        "Filipino",
+        "Manila",
+        "Peso"
+      ]
+    },
+    {
+      "lang_id": "ckb_iq",
+      "language": "Central Kurdish",
+      "country": "Iraq",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Kurdish",
+        "Sorani",
+        "Iraq",
+        "Iraqi",
+        "Baghdad",
+        "Kurdistan",
+        "Dinar"
+      ]
+    },
+    {
+      "lang_id": "cmn_hans_cn",
+      "language": "Mandarin Chinese",
+      "country": "China",
+      "continent": "Asia",
+      "difficulty": "common",
+      "forbidden": [
+        "Mandarin",
+        "Chinese",
+        "China",
+        "Beijing",
+        "Yuan",
+        "Renminbi",
+        "Great Wall",
+        "Panda"
+      ]
+    },
+    {
+      "lang_id": "cs_cz",
+      "language": "Czech",
+      "country": "Czech Republic",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Czech", "Czechia", "Prague", "Koruna"]
+    },
+    {
+      "lang_id": "cy_gb",
+      "language": "Welsh",
+      "country": "United Kingdom",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": [
+        "Welsh",
+        "Wales",
+        "Cardiff",
+        "United Kingdom",
+        "Britain",
+        "Pound"
+      ]
+    },
+    {
+      "lang_id": "da_dk",
+      "language": "Danish",
+      "country": "Denmark",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Danish", "Denmark", "Copenhagen", "Krone"]
+    },
+    {
+      "lang_id": "de_de",
+      "language": "German",
+      "country": "Germany",
+      "continent": "Europe",
+      "difficulty": "common",
+      "forbidden": [
+        "German",
+        "Deutsch",
+        "Germany",
+        "Deutschland",
+        "Berlin",
+        "Euro",
+        "Bavaria",
+        "Oktoberfest",
+        "Bratwurst",
+        "Volkswagen"
+      ]
+    },
+    {
+      "lang_id": "el_gr",
+      "language": "Greek",
+      "country": "Greece",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Greek", "Greece", "Athens", "Euro", "Acropolis"]
+    },
+    {
+      "lang_id": "en_us",
+      "language": "English",
+      "country": "United States",
+      "continent": "North America",
+      "difficulty": "common",
+      "forbidden": [
+        "English",
+        "America",
+        "American",
+        "United States",
+        "USA",
+        "Washington",
+        "Dollar"
+      ]
+    },
+    {
+      "lang_id": "et_ee",
+      "language": "Estonian",
+      "country": "Estonia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Estonian", "Estonia", "Tallinn", "Euro"]
+    },
+    {
+      "lang_id": "fa_ir",
+      "language": "Persian",
+      "country": "Iran",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Persian", "Farsi", "Iran", "Iranian", "Tehran", "Rial"]
+    },
+    {
+      "lang_id": "ff_sn",
+      "language": "Fula",
+      "country": "Senegal",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Fula",
+        "Fulani",
+        "Pulaar",
+        "Senegal",
+        "Senegalese",
+        "Dakar",
+        "Franc"
+      ]
+    },
+    {
+      "lang_id": "fi_fi",
+      "language": "Finnish",
+      "country": "Finland",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Finnish", "Finland", "Helsinki", "Euro"]
+    },
+    {
+      "lang_id": "fil_ph",
+      "language": "Filipino",
+      "country": "Philippines",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Filipino", "Tagalog", "Philippines", "Manila", "Peso"]
+    },
+    {
+      "lang_id": "fr_fr",
+      "language": "French",
+      "country": "France",
+      "continent": "Europe",
+      "difficulty": "common",
+      "forbidden": [
+        "French",
+        "Francais",
+        "Français",
+        "France",
+        "Paris",
+        "Euro",
+        "Eiffel",
+        "Eiffel Tower",
+        "Louvre",
+        "Baguette",
+        "Croissant"
+      ]
+    },
+    {
+      "lang_id": "ga_ie",
+      "language": "Irish",
+      "country": "Ireland",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Irish", "Gaelic", "Ireland", "Dublin", "Euro"]
+    },
+    {
+      "lang_id": "gl_es",
+      "language": "Galician",
+      "country": "Spain",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": [
+        "Galician",
+        "Galicia",
+        "Spain",
+        "Santiago de Compostela",
+        "Euro"
+      ]
+    },
+    {
+      "lang_id": "gu_in",
+      "language": "Gujarati",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Gujarati",
+        "Gujarat",
+        "India",
+        "Indian",
+        "Ahmedabad",
+        "Rupee"
+      ]
+    },
+    {
+      "lang_id": "ha_ng",
+      "language": "Hausa",
+      "country": "Nigeria",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Hausa", "Nigeria", "Nigerian", "Abuja", "Naira"]
+    },
+    {
+      "lang_id": "he_il",
+      "language": "Hebrew",
+      "country": "Israel",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Hebrew", "Israel", "Israeli", "Jerusalem", "Shekel"]
+    },
+    {
+      "lang_id": "hi_in",
+      "language": "Hindi",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Hindi",
+        "India",
+        "Indian",
+        "Delhi",
+        "New Delhi",
+        "Rupee",
+        "Bollywood",
+        "Taj Mahal",
+        "Ganges"
+      ]
+    },
+    {
+      "lang_id": "hr_hr",
+      "language": "Croatian",
+      "country": "Croatia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Croatian", "Croatia", "Zagreb", "Euro", "Kuna"]
+    },
+    {
+      "lang_id": "hu_hu",
+      "language": "Hungarian",
+      "country": "Hungary",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Hungarian", "Hungary", "Budapest", "Forint"]
+    },
+    {
+      "lang_id": "hy_am",
+      "language": "Armenian",
+      "country": "Armenia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Armenian", "Armenia", "Yerevan", "Dram"]
+    },
+    {
+      "lang_id": "id_id",
+      "language": "Indonesian",
+      "country": "Indonesia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Indonesian", "Indonesia", "Jakarta", "Rupiah"]
+    },
+    {
+      "lang_id": "ig_ng",
+      "language": "Igbo",
+      "country": "Nigeria",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Igbo", "Nigeria", "Nigerian", "Abuja", "Naira"]
+    },
+    {
+      "lang_id": "is_is",
+      "language": "Icelandic",
+      "country": "Iceland",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Icelandic", "Iceland", "Reykjavik", "Krona"]
+    },
+    {
+      "lang_id": "it_it",
+      "language": "Italian",
+      "country": "Italy",
+      "continent": "Europe",
+      "difficulty": "common",
+      "forbidden": [
+        "Italian",
+        "Italy",
+        "Rome",
+        "Euro",
+        "Colosseum",
+        "Pizza",
+        "Pasta"
+      ]
+    },
+    {
+      "lang_id": "jv_id",
+      "language": "Javanese",
+      "country": "Indonesia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Javanese", "Java", "Indonesia", "Jakarta", "Rupiah"]
+    },
+    {
+      "lang_id": "ka_ge",
+      "language": "Georgian",
+      "country": "Georgia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Georgian", "Georgia", "Tbilisi", "Lari"]
+    },
+    {
+      "lang_id": "kam_ke",
+      "language": "Kamba",
+      "country": "Kenya",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Kamba", "Kenya", "Kenyan", "Nairobi", "Shilling"]
+    },
+    {
+      "lang_id": "kea_cv",
+      "language": "Kabuverdianu",
+      "country": "Cape Verde",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Kabuverdianu",
+        "Cape Verdean",
+        "Cape Verde",
+        "Praia",
+        "Escudo"
+      ]
+    },
+    {
+      "lang_id": "kk_kz",
+      "language": "Kazakh",
+      "country": "Kazakhstan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Kazakh", "Kazakhstan", "Astana", "Tenge"]
+    },
+    {
+      "lang_id": "km_kh",
+      "language": "Khmer",
+      "country": "Cambodia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Khmer", "Cambodia", "Cambodian", "Phnom Penh", "Riel"]
+    },
+    {
+      "lang_id": "kn_in",
+      "language": "Kannada",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Kannada", "Karnataka", "India", "Bangalore", "Rupee"]
+    },
+    {
+      "lang_id": "ko_kr",
+      "language": "Korean",
+      "country": "South Korea",
+      "continent": "Asia",
+      "difficulty": "common",
+      "forbidden": [
+        "Korean",
+        "Hangul",
+        "Hangeul",
+        "Korea",
+        "South Korea",
+        "Seoul",
+        "Won",
+        "K-pop",
+        "Kimchi",
+        "Samsung"
+      ]
+    },
+    {
+      "lang_id": "ky_kg",
+      "language": "Kyrgyz",
+      "country": "Kyrgyzstan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Kyrgyz", "Kyrgyzstan", "Bishkek", "Som"]
+    },
+    {
+      "lang_id": "lb_lu",
+      "language": "Luxembourgish",
+      "country": "Luxembourg",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Luxembourgish", "Luxembourg", "Euro"]
+    },
+    {
+      "lang_id": "lg_ug",
+      "language": "Luganda",
+      "country": "Uganda",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Luganda",
+        "Ganda",
+        "Uganda",
+        "Ugandan",
+        "Kampala",
+        "Shilling"
+      ]
+    },
+    {
+      "lang_id": "ln_cd",
+      "language": "Lingala",
+      "country": "Democratic Republic of the Congo",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Lingala", "Congo", "Congolese", "Kinshasa", "Franc"]
+    },
+    {
+      "lang_id": "lo_la",
+      "language": "Lao",
+      "country": "Laos",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Lao", "Laos", "Laotian", "Vientiane", "Kip"]
+    },
+    {
+      "lang_id": "lt_lt",
+      "language": "Lithuanian",
+      "country": "Lithuania",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Lithuanian", "Lithuania", "Vilnius", "Euro"]
+    },
+    {
+      "lang_id": "luo_ke",
+      "language": "Luo",
+      "country": "Kenya",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Luo", "Kenya", "Kenyan", "Nairobi", "Shilling"]
+    },
+    {
+      "lang_id": "lv_lv",
+      "language": "Latvian",
+      "country": "Latvia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Latvian", "Latvia", "Riga", "Euro"]
+    },
+    {
+      "lang_id": "mi_nz",
+      "language": "Maori",
+      "country": "New Zealand",
+      "continent": "Oceania",
+      "difficulty": "all",
+      "forbidden": ["Maori", "New Zealand", "Wellington", "Dollar", "Kiwi"]
+    },
+    {
+      "lang_id": "mk_mk",
+      "language": "Macedonian",
+      "country": "North Macedonia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Macedonian", "Macedonia", "Skopje", "Denar"]
+    },
+    {
+      "lang_id": "ml_in",
+      "language": "Malayalam",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Malayalam", "Kerala", "India", "Indian", "Rupee"]
+    },
+    {
+      "lang_id": "mn_mn",
+      "language": "Mongolian",
+      "country": "Mongolia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Mongolian", "Mongolia", "Ulaanbaatar", "Tugrik"]
+    },
+    {
+      "lang_id": "mr_in",
+      "language": "Marathi",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Marathi", "Maharashtra", "India", "Mumbai", "Rupee"]
+    },
+    {
+      "lang_id": "ms_my",
+      "language": "Malay",
+      "country": "Malaysia",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Malay", "Malaysia", "Malaysian", "Kuala Lumpur", "Ringgit"]
+    },
+    {
+      "lang_id": "mt_mt",
+      "language": "Maltese",
+      "country": "Malta",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Maltese", "Malta", "Valletta", "Euro"]
+    },
+    {
+      "lang_id": "my_mm",
+      "language": "Burmese",
+      "country": "Myanmar",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Burmese", "Myanmar", "Burma", "Yangon", "Kyat"]
+    },
+    {
+      "lang_id": "nb_no",
+      "language": "Norwegian",
+      "country": "Norway",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Norwegian", "Norway", "Oslo", "Krone"]
+    },
+    {
+      "lang_id": "ne_np",
+      "language": "Nepali",
+      "country": "Nepal",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Nepali", "Nepal", "Kathmandu", "Rupee", "Everest"]
+    },
+    {
+      "lang_id": "nl_nl",
+      "language": "Dutch",
+      "country": "Netherlands",
+      "continent": "Europe",
+      "difficulty": "common",
+      "forbidden": ["Dutch", "Netherlands", "Holland", "Amsterdam", "Euro"]
+    },
+    {
+      "lang_id": "nso_za",
+      "language": "Northern Sotho",
+      "country": "South Africa",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Sotho",
+        "Sepedi",
+        "South Africa",
+        "South African",
+        "Pretoria",
+        "Rand"
+      ]
+    },
+    {
+      "lang_id": "ny_mw",
+      "language": "Chichewa",
+      "country": "Malawi",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Chichewa",
+        "Nyanja",
+        "Malawi",
+        "Malawian",
+        "Lilongwe",
+        "Kwacha"
+      ]
+    },
+    {
+      "lang_id": "oc_fr",
+      "language": "Occitan",
+      "country": "France",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Occitan", "Provencal", "France", "French", "Paris", "Euro"]
+    },
+    {
+      "lang_id": "om_et",
+      "language": "Oromo",
+      "country": "Ethiopia",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Oromo", "Ethiopia", "Ethiopian", "Addis Ababa", "Birr"]
+    },
+    {
+      "lang_id": "or_in",
+      "language": "Odia",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Odia", "Oriya", "Odisha", "India", "Bhubaneswar", "Rupee"]
+    },
+    {
+      "lang_id": "pa_in",
+      "language": "Punjabi",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Punjabi",
+        "Punjab",
+        "India",
+        "Indian",
+        "Chandigarh",
+        "Rupee"
+      ]
+    },
+    {
+      "lang_id": "pl_pl",
+      "language": "Polish",
+      "country": "Poland",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Polish", "Poland", "Warsaw", "Zloty"]
+    },
+    {
+      "lang_id": "ps_af",
+      "language": "Pashto",
+      "country": "Afghanistan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Pashto", "Afghanistan", "Afghan", "Kabul", "Afghani"]
+    },
+    {
+      "lang_id": "pt_br",
+      "language": "Portuguese",
+      "country": "Brazil",
+      "continent": "South America",
+      "difficulty": "common",
+      "forbidden": [
+        "Portuguese",
+        "Brazil",
+        "Brasil",
+        "Brazilian",
+        "Brasilia",
+        "Real",
+        "Rio de Janeiro",
+        "Rio",
+        "Samba",
+        "Carnival",
+        "Amazon"
+      ]
+    },
+    {
+      "lang_id": "ro_ro",
+      "language": "Romanian",
+      "country": "Romania",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Romanian", "Romania", "Bucharest", "Leu"]
+    },
+    {
+      "lang_id": "ru_ru",
+      "language": "Russian",
+      "country": "Russia",
+      "continent": "Europe",
+      "difficulty": "common",
+      "forbidden": ["Russian", "Russia", "Moscow", "Ruble", "Kremlin"]
+    },
+    {
+      "lang_id": "sd_in",
+      "language": "Sindhi",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Sindhi", "Sindh", "India", "Pakistan", "Rupee"]
+    },
+    {
+      "lang_id": "sk_sk",
+      "language": "Slovak",
+      "country": "Slovakia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Slovak", "Slovakia", "Bratislava", "Euro"]
+    },
+    {
+      "lang_id": "sl_si",
+      "language": "Slovenian",
+      "country": "Slovenia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Slovenian", "Slovenia", "Ljubljana", "Euro"]
+    },
+    {
+      "lang_id": "sn_zw",
+      "language": "Shona",
+      "country": "Zimbabwe",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Shona", "Zimbabwe", "Zimbabwean", "Harare", "Dollar"]
+    },
+    {
+      "lang_id": "so_so",
+      "language": "Somali",
+      "country": "Somalia",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Somali", "Somalia", "Mogadishu", "Shilling"]
+    },
+    {
+      "lang_id": "sr_rs",
+      "language": "Serbian",
+      "country": "Serbia",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Serbian", "Serbia", "Belgrade", "Dinar"]
+    },
+    {
+      "lang_id": "sv_se",
+      "language": "Swedish",
+      "country": "Sweden",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Swedish", "Sweden", "Stockholm", "Krona"]
+    },
+    {
+      "lang_id": "ta_in",
+      "language": "Tamil",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Tamil",
+        "Tamil Nadu",
+        "India",
+        "Chennai",
+        "Rupee",
+        "Sri Lanka"
+      ]
+    },
+    {
+      "lang_id": "te_in",
+      "language": "Telugu",
+      "country": "India",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Telugu",
+        "Andhra Pradesh",
+        "Telangana",
+        "India",
+        "Hyderabad",
+        "Rupee"
+      ]
+    },
+    {
+      "lang_id": "tg_tj",
+      "language": "Tajik",
+      "country": "Tajikistan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Tajik", "Tajikistan", "Dushanbe", "Somoni"]
+    },
+    {
+      "lang_id": "th_th",
+      "language": "Thai",
+      "country": "Thailand",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Thai", "Thailand", "Bangkok", "Baht"]
+    },
+    {
+      "lang_id": "tr_tr",
+      "language": "Turkish",
+      "country": "Turkey",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Turkish", "Turkey", "Ankara", "Istanbul", "Lira"]
+    },
+    {
+      "lang_id": "uk_ua",
+      "language": "Ukrainian",
+      "country": "Ukraine",
+      "continent": "Europe",
+      "difficulty": "all",
+      "forbidden": ["Ukrainian", "Ukraine", "Kyiv", "Kiev", "Hryvnia"]
+    },
+    {
+      "lang_id": "umb_ao",
+      "language": "Umbundu",
+      "country": "Angola",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Umbundu", "Angola", "Angolan", "Luanda", "Kwanza"]
+    },
+    {
+      "lang_id": "ur_pk",
+      "language": "Urdu",
+      "country": "Pakistan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Urdu", "Pakistan", "Pakistani", "Islamabad", "Rupee"]
+    },
+    {
+      "lang_id": "uz_uz",
+      "language": "Uzbek",
+      "country": "Uzbekistan",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Uzbek", "Uzbekistan", "Tashkent", "Som"]
+    },
+    {
+      "lang_id": "vi_vn",
+      "language": "Vietnamese",
+      "country": "Vietnam",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": [
+        "Vietnamese",
+        "Vietnam",
+        "Hanoi",
+        "Dong",
+        "Pho",
+        "Ho Chi Minh"
+      ]
+    },
+    {
+      "lang_id": "wo_sn",
+      "language": "Wolof",
+      "country": "Senegal",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Wolof", "Senegal", "Senegalese", "Dakar", "Franc"]
+    },
+    {
+      "lang_id": "xh_za",
+      "language": "Xhosa",
+      "country": "South Africa",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": [
+        "Xhosa",
+        "South Africa",
+        "South African",
+        "Pretoria",
+        "Rand"
+      ]
+    },
+    {
+      "lang_id": "yo_ng",
+      "language": "Yoruba",
+      "country": "Nigeria",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Yoruba", "Nigeria", "Nigerian", "Lagos", "Naira"]
+    },
+    {
+      "lang_id": "yue_hant_hk",
+      "language": "Cantonese",
+      "country": "Hong Kong",
+      "continent": "Asia",
+      "difficulty": "all",
+      "forbidden": ["Cantonese", "Hong Kong", "Dollar"]
+    },
+    {
+      "lang_id": "zu_za",
+      "language": "Zulu",
+      "country": "South Africa",
+      "continent": "Africa",
+      "difficulty": "all",
+      "forbidden": ["Zulu", "South Africa", "South African", "Pretoria", "Rand"]
     }
   ]
 }

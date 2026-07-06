@@ -121,11 +121,7 @@ namespace AccentGuesser.App
             _ui.DealButton.onClick.AddListener(OnDeal);
             _ui.PlayButton.onClick.AddListener(OnPlay);
             _ui.AskButton.onClick.AddListener(() => _ = OnAsk());
-            for (int i = 0; i < _ui.GuessButtons.Length; i++)
-            {
-                int idx = i; // capture
-                _ui.GuessButtons[i].onClick.AddListener(() => OnGuess(idx));
-            }
+            _ui.GuessButton.onClick.AddListener(OnGuess);
         }
 
         private void OnDeal()
@@ -154,11 +150,10 @@ namespace AccentGuesser.App
             _ui.AnswerText.text = $"The Keep: \"{answer}\"";
         }
 
-        private void OnGuess(int choiceIndex)
+        private void OnGuess()
         {
             if (_game.Phase != GamePhase.Round) return;
-            var choice = _game.Choices[choiceIndex];
-            _game.SubmitGuess(choice);
+            _game.SubmitGuess(_ui.GuessField.text);
             RenderReveal();
         }
 
@@ -168,7 +163,8 @@ namespace AccentGuesser.App
         {
             _ui.Status.text = $"Ready. {_catalog.GetLanguages(new ClipFilter(NullIfEmpty(_difficulty), NullIfEmpty(_region))).Count} languages loaded.";
             _ui.AnswerText.text = "";
-            SetGuessRowVisible(false);
+            _ui.GuessField.interactable = false;
+            _ui.GuessButton.interactable = false;
             _ui.PlayButton.interactable = false;
             _ui.AskButton.interactable = false;
             _ui.QuestionField.interactable = false;
@@ -185,14 +181,9 @@ namespace AccentGuesser.App
             _ui.PlayButton.GetComponentInChildren<Text>().text = "Play clip";
             _ui.AskButton.interactable = true;
 
-            var choices = _game.Choices;
-            for (int i = 0; i < _ui.GuessButtons.Length; i++)
-            {
-                bool has = i < choices.Count;
-                _ui.GuessButtons[i].gameObject.SetActive(has);
-                if (has) _ui.GuessLabels[i].text = choices[i].ToString();
-            }
-            SetGuessRowVisible(true);
+            _ui.GuessField.text = "";
+            _ui.GuessField.interactable = true;
+            _ui.GuessButton.interactable = true;
             UpdateScoreLine();
         }
 
@@ -203,7 +194,8 @@ namespace AccentGuesser.App
             string bonus = r.Correct ? (_game.Asked ? "(asked: +10)" : "(no question: +15 bonus!)") : "(+0, streak reset)";
             _ui.Status.text =
                 $"{verdict} {bonus}  —  It was {_game.Target}.  You guessed {_game.LastGuess}.  Press \"Deal me in\" for the next round.";
-            SetGuessRowVisible(false);
+            _ui.GuessField.interactable = false;
+            _ui.GuessButton.interactable = false;
             _ui.PlayButton.interactable = true; // allow replay of the revealed clip
             _ui.AskButton.interactable = false;
             _ui.QuestionField.interactable = false;
@@ -212,8 +204,6 @@ namespace AccentGuesser.App
 
         private void UpdateScoreLine() =>
             _ui.ScoreText.text = $"Score {_game.Score}    Streak {_game.Streak}    Round {_game.RoundNumber}";
-
-        private void SetGuessRowVisible(bool visible) => _ui.GuessRow.SetActive(visible);
 
         private static string NullIfEmpty(string s) => string.IsNullOrWhiteSpace(s) ? null : s;
     }

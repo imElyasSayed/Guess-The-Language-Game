@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace AccentGuesser.Core
 {
@@ -40,17 +39,16 @@ namespace AccentGuesser.Core
 
         public ClipInfo CurrentClip { get; private set; }
         public Lang Target { get; private set; }
-        public IReadOnlyList<Lang> Choices { get; private set; } = Array.Empty<Lang>();
 
         /// <summary>Populated on <see cref="SubmitGuess"/>; drives the Reveal overlay.</summary>
         public ScoreResult LastResult { get; private set; }
-        public Lang LastGuess { get; private set; }
+        public string LastGuess { get; private set; }
 
         // ---- Transitions ------------------------------------------------------
 
         /// <summary>
         /// Begin a new round with the given filter. Valid from Setup or Reveal.
-        /// Resets the one-question lock, draws a clip + 4 choices, and enters Round.
+        /// Resets the one-question lock, draws a clip + target, and enters Round.
         /// </summary>
         public void StartRound(string difficulty = null, string region = null)
         {
@@ -62,7 +60,6 @@ namespace AccentGuesser.Core
 
             CurrentClip = round.Clip;
             Target = round.Target;
-            Choices = round.Choices;
             Asked = false;
             LastGuess = null;
             RoundNumber++;
@@ -83,23 +80,24 @@ namespace AccentGuesser.Core
         }
 
         /// <summary>
-        /// Resolve a guess: score it (bonus if the player did NOT ask), update score/streak,
-        /// and enter Reveal. Valid only in Round phase.
+        /// Resolve a free-text guess: score it (bonus if the player did NOT ask), update
+        /// score/streak, and enter Reveal. Valid only in Round phase. Matching is a trimmed,
+        /// case-insensitive comparison against <see cref="Target"/>'s language name.
         /// </summary>
-        public ScoreResult SubmitGuess(Lang choice)
+        public ScoreResult SubmitGuess(string guess)
         {
             if (Phase != GamePhase.Round)
                 throw new InvalidOperationException("Can only guess during the Round phase.");
-            if (choice == null)
-                throw new ArgumentNullException(nameof(choice));
+            if (guess == null)
+                throw new ArgumentNullException(nameof(guess));
 
-            bool correct = choice.Equals(Target);
+            bool correct = guess.Trim().Equals(Target.Language, StringComparison.OrdinalIgnoreCase);
             var result = ScoreCalculator.Evaluate(correct, Asked, Streak);
 
             Score += result.Points;
             Streak = result.NewStreak;
             LastResult = result;
-            LastGuess = choice;
+            LastGuess = guess;
             Phase = GamePhase.Reveal;
             return result;
         }

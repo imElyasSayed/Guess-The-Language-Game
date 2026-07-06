@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using AccentGuesser.Core;
 using NUnit.Framework;
 
@@ -12,17 +10,6 @@ namespace AccentGuesser.EditModeTests
             new FakeClipCatalog(
                 ("a", "Alpha"), ("b", "Bravo"), ("c", "Charlie"),
                 ("d", "Delta"), ("e", "Echo"), ("f", "Foxtrot"));
-
-        [Test]
-        public void CreateRound_ProducesFourDistinctChoices_IncludingTarget()
-        {
-            var round = RoundFactory.CreateRound(SixLangCatalog(), ClipFilter.None, new Random(1));
-
-            Assert.AreEqual(4, round.Choices.Count);
-            Assert.AreEqual(4, round.Choices.Select(c => c.Id).Distinct().Count(), "choices must be distinct");
-            CollectionAssert.Contains(round.Choices.Select(c => c.Id).ToList(), round.Target.Id,
-                "the target must be among the choices");
-        }
 
         [Test]
         public void CreateRound_ClipMatchesTargetLanguage()
@@ -37,19 +24,23 @@ namespace AccentGuesser.EditModeTests
             var a = RoundFactory.CreateRound(SixLangCatalog(), ClipFilter.None, new Random(1234));
             var b = RoundFactory.CreateRound(SixLangCatalog(), ClipFilter.None, new Random(1234));
 
-            Assert.AreEqual(a.Target.Id, b.Target.Id);
-            CollectionAssert.AreEqual(
-                a.Choices.Select(c => c.Id).ToList(),
-                b.Choices.Select(c => c.Id).ToList(),
-                "same seed must yield the same target and choice order");
+            Assert.AreEqual(a.Target.Id, b.Target.Id, "same seed must yield the same target");
         }
 
         [Test]
-        public void CreateRound_Throws_WhenFewerThanFourLanguages()
+        public void CreateRound_Succeeds_WithSingleLanguage()
         {
-            var tiny = new FakeClipCatalog(("a", "Alpha"), ("b", "Bravo"), ("c", "Charlie"));
+            var single = new FakeClipCatalog(("a", "Alpha"));
+            var round = RoundFactory.CreateRound(single, ClipFilter.None, new Random(1));
+            Assert.AreEqual("a", round.Target.Id);
+        }
+
+        [Test]
+        public void CreateRound_Throws_WhenNoLanguagesAvailable()
+        {
+            var empty = new FakeClipCatalog();
             Assert.Throws<InvalidOperationException>(
-                () => RoundFactory.CreateRound(tiny, ClipFilter.None, new Random(1)));
+                () => RoundFactory.CreateRound(empty, ClipFilter.None, new Random(1)));
         }
 
         [Test]
@@ -59,18 +50,6 @@ namespace AccentGuesser.EditModeTests
                 () => RoundFactory.CreateRound(null, ClipFilter.None, new Random(1)));
             Assert.Throws<ArgumentNullException>(
                 () => RoundFactory.CreateRound(SixLangCatalog(), ClipFilter.None, null));
-        }
-
-        [Test]
-        public void Shuffle_IsDeterministic_AndPreservesElements()
-        {
-            var list1 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
-            var list2 = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
-            RoundFactory.Shuffle(list1, new Random(99));
-            RoundFactory.Shuffle(list2, new Random(99));
-
-            CollectionAssert.AreEqual(list1, list2);
-            CollectionAssert.AreEquivalent(new[] { 1, 2, 3, 4, 5, 6, 7, 8 }, list1);
         }
     }
 }

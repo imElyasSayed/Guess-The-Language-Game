@@ -22,9 +22,8 @@ namespace AccentGuesser.App
             public Button PlayButton;
             public Button AskButton;
             public InputField QuestionField;
-            public GameObject GuessRow;
-            public Button[] GuessButtons;
-            public Text[] GuessLabels;
+            public InputField GuessField;
+            public Button GuessButton;
         }
 
         public static Refs Build(Transform parent)
@@ -65,17 +64,10 @@ namespace AccentGuesser.App
 
             refs.AnswerText = MakeText(root, "Answer", "", 20, FontStyle.Italic);
 
-            // Guess row: 4 buttons.
+            // Guess row: free-text field + Guess button.
             var guessRow = NewRow(root, "GuessRow");
-            refs.GuessRow = guessRow.gameObject;
-            refs.GuessButtons = new Button[4];
-            refs.GuessLabels = new Text[4];
-            for (int i = 0; i < 4; i++)
-            {
-                var b = MakeButton(guessRow, $"Guess{i}", $"Choice {i + 1}");
-                refs.GuessButtons[i] = b;
-                refs.GuessLabels[i] = b.GetComponentInChildren<Text>();
-            }
+            refs.GuessField = MakeInputField(guessRow, "GuessField", "Type the language...");
+            refs.GuessButton = MakeButton(guessRow, "GuessButton", "Guess");
 
             return refs;
         }
