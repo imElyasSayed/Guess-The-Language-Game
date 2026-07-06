@@ -24,7 +24,7 @@ namespace AccentGuesser.Net
         [Tooltip("If set, host uses the real relay oracle; else the offline MockOracleClient.")]
         [SerializeField] private string _oracleRelayBaseUrl = "";
         [Tooltip("Use Unity Relay (join code). Off = direct IP for LAN / same-machine tests.")]
-        [SerializeField] private bool _useRelay = true;
+        [SerializeField] private bool _useRelay = false;
 
         private MatchNetworkBehaviour _match;
         private AudioService _audio;

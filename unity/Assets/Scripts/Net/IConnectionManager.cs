@@ -61,9 +61,15 @@ namespace AccentGuesser.Net
 
         private static string GetLocalIPv4()
         {
-            foreach (var ip in System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList)
-                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                    return ip.ToString();
+            // Best-effort; must never throw (macOS can fail hostname resolution) — that would fault
+            // the host task and leave the lobby stuck on "Starting host...".
+            try
+            {
+                foreach (var ip in System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName()).AddressList)
+                    if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                        return ip.ToString();
+            }
+            catch { /* fall through */ }
             return "127.0.0.1";
         }
     }

@@ -41,6 +41,7 @@ namespace AccentGuesser.Net
         private double _timerDeadline;
         private double _nextRoundAt;
         private bool _awaitingNextRound;
+        private bool _needFirstRound;
 
         private static string Pid(ulong clientId) => clientId.ToString();
         private double Now => NetworkManager.ServerTime.Time;
@@ -62,9 +63,10 @@ namespace AccentGuesser.Net
             NetworkManager.OnClientConnectedCallback += HandleConnected;
             NetworkManager.OnClientDisconnectCallback += HandleDisconnected;
 
-            // The host is also a player (listen-server).
+            // The host is also a player (listen-server). Defer the first round to Update: sending a
+            // ClientRpc during OnNetworkSpawn is too early and the message can be dropped.
             AddIfKnown(NetworkManager.LocalClientId);
-            StartNextRound();
+            _needFirstRound = true;
         }
 
         public override void OnNetworkDespawn()
@@ -121,6 +123,13 @@ namespace AccentGuesser.Net
         private void Update()
         {
             if (!IsServer || _match == null) return;
+
+            if (_needFirstRound)
+            {
+                _needFirstRound = false;
+                StartNextRound();
+                return;
+            }
 
             if (_match.Phase == MatchPhase.Listen && Now >= _timerDeadline)
             {
