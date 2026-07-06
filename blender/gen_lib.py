@@ -109,6 +109,37 @@ def torus(name="torus", major=0.5, minor=0.15, mseg=16, minseg=8,
     return o
 
 
+def capsule(name, p1, p2, radius, material=None, verts=14, rings=8):
+    """Organic limb segment: a cylinder with spherical caps, laid from p1 to p2.
+    The workhorse for arms/legs/necks/torsos — chain them through joint points."""
+    p1, p2 = Vector(p1), Vector(p2)
+    d = p2 - p1
+    length = max(d.length, 1e-4)
+    mid = (p1 + p2) * 0.5
+    cyl = cylinder("c", radius=radius, depth=length, verts=verts)
+    top = sphere("s1", radius=radius, segments=verts, rings=rings, loc=(0, 0, length / 2))
+    bot = sphere("s2", radius=radius, segments=verts, rings=rings, loc=(0, 0, -length / 2))
+    o = join([cyl, top, bot], name)
+    M = Matrix.Translation(mid) @ d.to_track_quat("Z", "Y").to_matrix().to_4x4()
+    o.data.transform(M)
+    if material:
+        o.data.materials.append(material)
+    shade_smooth(o)
+    return o
+
+
+def subsurf(obj, levels=2):
+    """Apply a subdivision-surface modifier — turns blocky cages into soft organic
+    cartoon forms. Apply per-part BEFORE joining so creases don't appear."""
+    mod = obj.modifiers.new("ss", "SUBSURF")
+    mod.levels = levels
+    mod.render_levels = levels
+    _select_only([obj])
+    bpy.ops.object.modifier_apply(modifier=mod.name)
+    shade_smooth(obj)
+    return obj
+
+
 # --------------------------------------------------------------------------- #
 # Materials
 # --------------------------------------------------------------------------- #

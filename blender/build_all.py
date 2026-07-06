@@ -44,6 +44,7 @@ def _roots():
 def make(builder, fbx_name, subdir, cam, target, res=640, ortho=None):
     L.reset()
     obj = builder()
+    C.hide_breath()  # preview renders show the puff toggled off, matching in-game default
     _unwrap_all()
     roots = [obj] if obj is not None else _roots()
     fbx_path = os.path.join(subdir, fbx_name + ".fbx")
@@ -62,11 +63,11 @@ def build_props():
 
 def build_characters():
     # front-facing 3/4 previews; characters face +Y so shoot from +Y
-    make(C.char_sphere,  "P1_Sphere",       CHAR_DIR, (1.4, 4.4, 1.7), (0, 0, 1.2))
-    make(C.char_giraffe, "P2_Giraffe",      CHAR_DIR, (1.4, 4.6, 1.9), (0, 0, 1.5))
-    make(C.char_boxer,   "P3_Boxer",        CHAR_DIR, (1.6, 4.6, 1.7), (0, 0, 1.3))
-    make(C.char_slice,   "P4_Slice",        CHAR_DIR, (1.4, 4.6, 1.9), (0, 0, 1.5))
-    make(C.announcer,    "Announcer_Host",  CHAR_DIR, (1.6, 4.8, 1.9), (0, 0, 1.5))
+    make(C.char_sphere,  "P1_Sphere",       CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.05))
+    make(C.char_giraffe, "P2_Giraffe",      CHAR_DIR, (1.1, 4.0, 2.1), (0, 0.1, 1.40))
+    make(C.char_boxer,   "P3_Boxer",        CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.10))
+    make(C.char_slice,   "P4_Slice",        CHAR_DIR, (1.1, 3.8, 1.7), (0, 0.1, 1.25))
+    make(C.announcer,    "Announcer_Host",  CHAR_DIR, (1.2, 3.6, 1.6), (0, 0.1, 1.15))
 
 
 def build_room_asset():
@@ -99,9 +100,12 @@ def build_hero():
         stool = E.stool()
         L.bake(stool, loc=(x, y, 0))
         ch = b()
-        face = math.atan2(cy - y, cx - x) - math.pi / 2  # +Y model-front toward centre
-        ch.location = (x, y, 0.0)
+        # stand just outside the stool (Unity builder does the same +0.25 offset)
+        px, py = cx + (seat_r + 0.35) * math.cos(a), cy + (seat_r + 0.35) * math.sin(a)
+        face = math.atan2(cy - py, cx - px) - math.pi / 2  # +Y model-front toward centre
+        ch.location = (px, py, 0.0)
         ch.rotation_euler = (0, 0, face)
+    C.hide_breath()
 
     host = C.announcer()
     host.location = (-E.HW + 1.7, -0.5, 0.0)    # behind the bar on the -X wall

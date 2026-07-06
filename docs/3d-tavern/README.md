@@ -33,10 +33,11 @@ keeps the table centre clear for future game UI.
 
 ## Notes / next steps
 
-- Assets are intentionally **low-poly stylized blockouts** (90–2,900 tris each), game-ready
-  (transforms applied, origins placed, UV-unwrapped, consistent 1u = 1m scale). They establish
-  the visual identity and silhouettes; hand-sculpted hero detail / rigging / animation are the
-  natural follow-up.
+- Assets are **stylized low-poly and game-ready** (props 90–300 faces, room ~2.9k, characters
+  ~6–8k with full cartoon faces — iris/highlight/lids/brows/nose/ears/teeth — capsule limbs
+  with joints, hands, shoes, and clothing details), with transforms applied, origins placed,
+  UV-unwrapped, at a consistent 1u = 1m scale. Rigging / animation are the natural follow-up;
+  body parts are kept as separate meshes (Head/Neck/Torso/Arms/Legs) for exactly that.
 - Bad breath is a toggle on the giraffe's baked `BadBreath` mesh (`BadBreathToggle` component,
   key **B**); swap in a particle system later for a livelier puff.
 - Built-in render pipeline. If a model imports untextured, select its FBX → **Materials** →

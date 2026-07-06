@@ -213,11 +213,11 @@ namespace AccentGuesser.EditorTools
             camGo.transform.SetParent(parent);
             // High 3/4 overview: frames all four players and keeps the table centre
             // readable for future UI, looking in over the open front / roofless top.
-            camGo.transform.position = new Vector3(6.2f, 5.6f, -7.4f);
+            camGo.transform.position = new Vector3(4.4f, 6.2f, -6.2f);
             camGo.transform.rotation = Quaternion.LookRotation(
-                (new Vector3(0f, 0.7f, -0.2f) - camGo.transform.position).normalized);
+                (new Vector3(0f, 0.6f, -0.1f) - camGo.transform.position).normalized);
             var cam = camGo.AddComponent<Camera>();
-            cam.fieldOfView = 46f;
+            cam.fieldOfView = 50f;
             cam.backgroundColor = new Color(0.03f, 0.025f, 0.02f);
             cam.clearFlags = CameraClearFlags.SolidColor;
             cam.nearClipPlane = 0.1f;
