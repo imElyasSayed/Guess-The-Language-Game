@@ -4,6 +4,7 @@
     "references": [
         "AccentGuesser.Core",
         "AccentGuesser.Net",
+        "AccentGuesser.World",
         "Unity.Netcode.Runtime"
     ],
     "includePlatforms": [

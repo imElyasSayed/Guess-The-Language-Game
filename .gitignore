@@ -11,6 +11,10 @@ prep/out/
 notebooks/out/
 notebooks/.ipynb_checkpoints/
 
+# ---- Blender (3D asset pipeline) ----
+# generated preview/hero renders (showcase copies live in docs/3d-tavern/ instead)
+blender/out/
+
 # ---- Node (relay) ----
 relay/node_modules/
 relay/dist/

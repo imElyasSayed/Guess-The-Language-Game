@@ -8,5 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Multiplayer.unity
     guid: 91ae2295e68dc46218e2054c050027b1
+  - enabled: 1
+    path: Assets/Scenes/Tavern.unity
+    guid: bf62870f9bc2b4d71ad79914dd18a986
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
