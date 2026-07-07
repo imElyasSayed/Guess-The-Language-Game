@@ -30,8 +30,10 @@ namespace AccentGuesser.EditorTools
 
         private const float SeatRadius = 2.4f;     // stool ring radius (metres)
         private static readonly float[] SeatAngles = { 235f, 305f, 25f, 155f };
+        // Beta Squad avatars: four seated; AJ (the fifth) hangs out by the bar.
         private static readonly string[] PlayerModels =
-            { "P1_Sphere", "P2_Giraffe", "P3_Boxer", "P4_Slice" };
+            { "P1_Chunkz", "P2_Niko", "P3_Kenny", "P4_Sharky" };
+        private const string FifthAvatar = "P5_AJ";
 
         [MenuItem("Say Again/Build 3D Tavern Scene")]
         public static void Build()
@@ -57,14 +59,17 @@ namespace AccentGuesser.EditorTools
                 var playerPos = new Vector3(Mathf.Cos(rad), 0f, Mathf.Sin(rad)) * (SeatRadius + 0.25f);
                 var player = Instantiate(PlayerModels[i], CharDir, playerPos, faceCentre, seats.transform);
 
-                if (PlayerModels[i] == "P2_Giraffe" && player != null)
+                if (PlayerModels[i] == "P2_Niko" && player != null)
                     WireBadBreath(player);
             }
 
-            // --- Announcer behind the bar (-X wall) ------------------------ #
+            // --- Announcer behind the bar (-X wall), AJ chatting at the bar - #
             var hostPos = new Vector3(-3.8f, 0f, -0.5f);
             Instantiate("Announcer_Host", CharDir, hostPos,
                 Quaternion.LookRotation(FlatDir(Vector3.zero - hostPos)), root.transform);
+            var ajPos = new Vector3(-2.9f, 0f, 0.6f);
+            Instantiate(FifthAvatar, CharDir, ajPos,
+                Quaternion.LookRotation(FlatDir(hostPos - ajPos)), root.transform);
 
             // --- Lighting --------------------------------------------------- #
             BuildLighting(root.transform);
@@ -82,11 +87,11 @@ namespace AccentGuesser.EditorTools
             EditorUtility.DisplayDialog(
                 "3D Tavern ready",
                 "Built and opened Assets/Scenes/Tavern.unity:\n" +
-                "• Cozy tavern room, circular table, 4 seats + players\n" +
-                "• Announcer behind the bar\n" +
-                "• Warm candle/fire/lantern point lights\n" +
-                "• Camera framing all four players\n\n" +
-                "Press B in Play mode to toggle the giraffe's bad breath.\n\n" +
+                "• Cozy tavern room, circular table, 4 seats\n" +
+                "• Beta Squad avatars: Chunkz, Niko, Kenny, Sharky at the table,\n" +
+                "  AJ chatting with the announcer at the bar\n" +
+                "• Warm candle/fire/lantern point lights + framing camera\n\n" +
+                "Press B in Play mode to toggle Niko's stinky breath.\n\n" +
                 "If models look untextured: select the FBXs, Materials tab, " +
                 "set Material Creation Mode to 'Standard' and Extract Materials.",
                 "Nice");

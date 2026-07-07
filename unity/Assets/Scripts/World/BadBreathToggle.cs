@@ -3,9 +3,10 @@ using UnityEngine;
 namespace AccentGuesser.World
 {
     /// <summary>
-    /// Toggles the giraffe character's green "bad breath" on and off by showing/hiding
-    /// the low-poly breath mesh baked into the model. Press <b>B</b> at runtime to
-    /// toggle, or call <see cref="SetOn"/> / <see cref="Toggle"/> from game code.
+    /// Toggles Niko's green "stinky breath" on and off by showing/hiding the
+    /// low-poly breath mesh baked into the model (he has the giraffe neck).
+    /// Press <b>B</b> at runtime to toggle, or call <see cref="SetOn"/> /
+    /// <see cref="Toggle"/> from game code.
     /// </summary>
     public class BadBreathToggle : MonoBehaviour
     {

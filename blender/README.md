@@ -23,7 +23,7 @@ Requires Blender 5.x (`brew install blender`). This:
 |------|---------------|
 | `gen_lib.py` | Headless-safe helpers: unit primitives, materials, join, UV, origin, FBX/GLB export, preview render. All transforms are baked into mesh data to avoid operator-context issues in background mode. |
 | `gen_env.py` | Tavern kit: floor, walls, high beams, stone fireplace, bar + back-bar bottle shelves, barrels, hanging lanterns, wall candles, circular table, stool. `build_room()` joins the static shell into one `TavernRoom` mesh; Table/Stool/Barrel export separately. |
-| `gen_characters.py` | Four Beta-Squad-inspired caricatures + the announcer host. Each is logical parts (Head/Torso/Arms/Legs) parented to a feet-origin root so it stays riggable. |
+| `gen_characters.py` | The five Beta Squad avatars (Chunkz, Niko, Kenny, Sharky, AJ — from the reference photos in the repo root) + the announcer host. Each is logical parts (Head/Neck/Torso/Arms/Legs) parented to a feet-origin root so it stays riggable. |
 | `build_all.py` | Orchestrator (build → UV → export → preview). |
 
 ## Conventions
@@ -36,7 +36,7 @@ Requires Blender 5.x (`brew install blender`). This:
 ## Assets produced
 
 - `unity/Assets/Art/Env/` — `TavernRoom.fbx`, `Table.fbx`, `Stool.fbx`, `Barrel.fbx`, `tavern_lights.json`
-- `unity/Assets/Art/Characters/generated/` — `P1_Sphere`, `P2_Giraffe`, `P3_Boxer`, `P4_Slice`, `Announcer_Host` (`.fbx`)
+- `unity/Assets/Art/Characters/generated/` — `P1_Chunkz`, `P2_Niko`, `P3_Kenny`, `P4_Sharky`, `P5_AJ`, `Announcer_Host` (`.fbx`)
 
 ## Assemble in Unity
 

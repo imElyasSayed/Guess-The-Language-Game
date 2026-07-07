@@ -63,11 +63,12 @@ def build_props():
 
 def build_characters():
     # front-facing 3/4 previews; characters face +Y so shoot from +Y
-    make(C.char_sphere,  "P1_Sphere",       CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.05))
-    make(C.char_giraffe, "P2_Giraffe",      CHAR_DIR, (1.1, 4.0, 2.1), (0, 0.1, 1.40))
-    make(C.char_boxer,   "P3_Boxer",        CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.10))
-    make(C.char_slice,   "P4_Slice",        CHAR_DIR, (1.1, 3.8, 1.7), (0, 0.1, 1.25))
-    make(C.announcer,    "Announcer_Host",  CHAR_DIR, (1.2, 3.6, 1.6), (0, 0.1, 1.15))
+    make(C.char_chunkz, "P1_Chunkz",       CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.05))
+    make(C.char_niko,   "P2_Niko",         CHAR_DIR, (1.1, 4.0, 2.1), (0, 0.1, 1.40))
+    make(C.char_kenny,  "P3_Kenny",        CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.10))
+    make(C.char_sharky, "P4_Sharky",       CHAR_DIR, (1.1, 3.6, 1.6), (0, 0.1, 1.15))
+    make(C.char_aj,     "P5_AJ",           CHAR_DIR, (1.1, 3.6, 1.7), (0, 0.1, 1.20))
+    make(C.announcer,   "Announcer_Host",  CHAR_DIR, (1.2, 3.6, 1.6), (0, 0.1, 1.15))
 
 
 def build_room_asset():
@@ -89,11 +90,11 @@ def build_hero():
     table = E.table_round()
     L.bake(table, loc=(0, 0.4, 0))  # nudge toward back, leaving front open to camera
 
-    # four players evenly around the table, each facing the centre (0, 0.4)
+    # four players seated around the table, the fifth (AJ) hangs out by the bar
     cx, cy = 0.0, 0.4
     seat_r = 2.4
     seats = [235, 305, 25, 155]  # front-left, front-right, back-right, back-left
-    builders = [C.char_sphere, C.char_giraffe, C.char_boxer, C.char_slice]
+    builders = [C.char_chunkz, C.char_niko, C.char_kenny, C.char_sharky]
     for ang_deg, b in zip(seats, builders):
         a = math.radians(ang_deg)
         x, y = cx + seat_r * math.cos(a), cy + seat_r * math.sin(a)
@@ -110,6 +111,9 @@ def build_hero():
     host = C.announcer()
     host.location = (-E.HW + 1.7, -0.5, 0.0)    # behind the bar on the -X wall
     host.rotation_euler = (0, 0, -math.pi / 2)   # facing +X into the room
+    aj = C.char_aj()
+    aj.location = (-E.HW + 2.6, 0.6, 0.0)        # leaning at the bar, chatting
+    aj.rotation_euler = (0, 0, math.radians(-115))
 
     L.render_preview(os.path.join(PREV, "HERO_tavern.png"),
                      cam_loc=(0.0, -9.0, 5.4), target=(0, 0.4, 0.9), res=960,

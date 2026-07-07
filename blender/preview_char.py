@@ -22,11 +22,12 @@ PREV = os.path.join(HERE, "out", "previews")
 os.makedirs(PREV, exist_ok=True)
 
 SPECS = {
-    "P1":   (C.char_sphere,  (1.1, 3.4, 1.5), (0, 0.1, 1.05)),
-    "P2":   (C.char_giraffe, (1.1, 4.0, 2.1), (0, 0.1, 1.40)),
-    "P3":   (C.char_boxer,   (1.1, 3.4, 1.5), (0, 0.1, 1.10)),
-    "P4":   (C.char_slice,   (1.1, 3.8, 1.7), (0, 0.1, 1.25)),
-    "HOST": (C.announcer,    (1.2, 3.6, 1.6), (0, 0.1, 1.15)),
+    "P1":   (C.char_chunkz, (1.1, 3.4, 1.5), (0, 0.1, 1.05)),
+    "P2":   (C.char_niko,   (1.1, 4.0, 2.1), (0, 0.1, 1.40)),
+    "P3":   (C.char_kenny,  (1.1, 3.4, 1.5), (0, 0.1, 1.10)),
+    "P4":   (C.char_sharky, (1.1, 3.6, 1.6), (0, 0.1, 1.15)),
+    "P5":   (C.char_aj,     (1.1, 3.6, 1.7), (0, 0.1, 1.20)),
+    "HOST": (C.announcer,   (1.2, 3.6, 1.6), (0, 0.1, 1.15)),
 }
 
 key = "ALL"
