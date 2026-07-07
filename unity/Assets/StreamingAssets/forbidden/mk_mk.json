@@ -1,0 +1,12 @@
+{
+  "lang_id": "mk_mk",
+  "language": "Macedonian",
+  "country": "North Macedonia",
+  "continent": "Europe",
+  "forbidden": [
+    "macedonian",
+    "macedonia",
+    "skopje",
+    "denar"
+  ]
+}

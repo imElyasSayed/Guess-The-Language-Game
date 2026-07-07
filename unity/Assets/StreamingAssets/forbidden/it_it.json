@@ -1,0 +1,15 @@
+{
+  "lang_id": "it_it",
+  "language": "Italian",
+  "country": "Italy",
+  "continent": "Europe",
+  "forbidden": [
+    "italian",
+    "italy",
+    "rome",
+    "euro",
+    "colosseum",
+    "pizza",
+    "pasta"
+  ]
+}

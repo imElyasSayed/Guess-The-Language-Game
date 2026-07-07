@@ -1,0 +1,12 @@
+{
+  "lang_id": "sv_se",
+  "language": "Swedish",
+  "country": "Sweden",
+  "continent": "Europe",
+  "forbidden": [
+    "swedish",
+    "sweden",
+    "stockholm",
+    "krona"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lang_id": "mn_mn",
+  "language": "Mongolian",
+  "country": "Mongolia",
+  "continent": "Asia",
+  "forbidden": [
+    "mongolian",
+    "mongolia",
+    "ulaanbaatar",
+    "tugrik"
+  ]
+}

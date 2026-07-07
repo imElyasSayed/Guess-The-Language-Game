@@ -1,0 +1,13 @@
+{
+  "lang_id": "mi_nz",
+  "language": "Maori",
+  "country": "New Zealand",
+  "continent": "Oceania",
+  "forbidden": [
+    "maori",
+    "new zealand",
+    "wellington",
+    "dollar",
+    "kiwi"
+  ]
+}

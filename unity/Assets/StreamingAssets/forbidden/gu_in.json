@@ -1,0 +1,14 @@
+{
+  "lang_id": "gu_in",
+  "language": "Gujarati",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "gujarati",
+    "gujarat",
+    "india",
+    "indian",
+    "ahmedabad",
+    "rupee"
+  ]
+}

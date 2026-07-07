@@ -1,0 +1,12 @@
+{
+  "lang_id": "sl_si",
+  "language": "Slovenian",
+  "country": "Slovenia",
+  "continent": "Europe",
+  "forbidden": [
+    "slovenian",
+    "slovenia",
+    "ljubljana",
+    "euro"
+  ]
+}

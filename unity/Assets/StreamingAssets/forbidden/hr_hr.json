@@ -1,0 +1,13 @@
+{
+  "lang_id": "hr_hr",
+  "language": "Croatian",
+  "country": "Croatia",
+  "continent": "Europe",
+  "forbidden": [
+    "croatian",
+    "croatia",
+    "zagreb",
+    "euro",
+    "kuna"
+  ]
+}

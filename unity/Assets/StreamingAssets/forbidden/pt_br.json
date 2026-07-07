@@ -1,0 +1,19 @@
+{
+  "lang_id": "pt_br",
+  "language": "Portuguese",
+  "country": "Brazil",
+  "continent": "South America",
+  "forbidden": [
+    "portuguese",
+    "brazil",
+    "brasil",
+    "brazilian",
+    "brasilia",
+    "real",
+    "rio de janeiro",
+    "rio",
+    "samba",
+    "carnival",
+    "amazon"
+  ]
+}

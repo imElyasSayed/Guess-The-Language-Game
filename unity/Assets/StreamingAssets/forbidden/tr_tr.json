@@ -1,0 +1,13 @@
+{
+  "lang_id": "tr_tr",
+  "language": "Turkish",
+  "country": "Turkey",
+  "continent": "Asia",
+  "forbidden": [
+    "turkish",
+    "turkey",
+    "ankara",
+    "istanbul",
+    "lira"
+  ]
+}

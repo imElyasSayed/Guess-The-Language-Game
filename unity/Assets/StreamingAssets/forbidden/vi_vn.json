@@ -1,0 +1,14 @@
+{
+  "lang_id": "vi_vn",
+  "language": "Vietnamese",
+  "country": "Vietnam",
+  "continent": "Asia",
+  "forbidden": [
+    "vietnamese",
+    "vietnam",
+    "hanoi",
+    "dong",
+    "pho",
+    "ho chi minh"
+  ]
+}

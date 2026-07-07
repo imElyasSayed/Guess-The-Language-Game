@@ -1,0 +1,12 @@
+{
+  "lang_id": "ky_kg",
+  "language": "Kyrgyz",
+  "country": "Kyrgyzstan",
+  "continent": "Asia",
+  "forbidden": [
+    "kyrgyz",
+    "kyrgyzstan",
+    "bishkek",
+    "som"
+  ]
+}

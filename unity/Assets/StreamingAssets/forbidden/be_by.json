@@ -1,0 +1,12 @@
+{
+  "lang_id": "be_by",
+  "language": "Belarusian",
+  "country": "Belarus",
+  "continent": "Europe",
+  "forbidden": [
+    "belarusian",
+    "belarus",
+    "minsk",
+    "ruble"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lang_id": "ro_ro",
+  "language": "Romanian",
+  "country": "Romania",
+  "continent": "Europe",
+  "forbidden": [
+    "romanian",
+    "romania",
+    "bucharest",
+    "leu"
+  ]
+}

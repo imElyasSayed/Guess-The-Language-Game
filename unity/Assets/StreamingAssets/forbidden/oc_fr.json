@@ -1,0 +1,14 @@
+{
+  "lang_id": "oc_fr",
+  "language": "Occitan",
+  "country": "France",
+  "continent": "Europe",
+  "forbidden": [
+    "occitan",
+    "provencal",
+    "france",
+    "french",
+    "paris",
+    "euro"
+  ]
+}

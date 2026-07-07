@@ -1,0 +1,12 @@
+{
+  "lang_id": "id_id",
+  "language": "Indonesian",
+  "country": "Indonesia",
+  "continent": "Asia",
+  "forbidden": [
+    "indonesian",
+    "indonesia",
+    "jakarta",
+    "rupiah"
+  ]
+}

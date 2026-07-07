@@ -1,0 +1,11 @@
+{
+  "lang_id": "yue_hant_hk",
+  "language": "Cantonese",
+  "country": "Hong Kong",
+  "continent": "Asia",
+  "forbidden": [
+    "cantonese",
+    "hong kong",
+    "dollar"
+  ]
+}

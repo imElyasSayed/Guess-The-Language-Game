@@ -1,0 +1,13 @@
+{
+  "lang_id": "jv_id",
+  "language": "Javanese",
+  "country": "Indonesia",
+  "continent": "Asia",
+  "forbidden": [
+    "javanese",
+    "java",
+    "indonesia",
+    "jakarta",
+    "rupiah"
+  ]
+}

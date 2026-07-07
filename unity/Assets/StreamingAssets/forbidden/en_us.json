@@ -1,0 +1,15 @@
+{
+  "lang_id": "en_us",
+  "language": "English",
+  "country": "United States",
+  "continent": "North America",
+  "forbidden": [
+    "english",
+    "america",
+    "american",
+    "united states",
+    "usa",
+    "washington",
+    "dollar"
+  ]
+}

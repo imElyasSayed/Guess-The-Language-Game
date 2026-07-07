@@ -1,0 +1,13 @@
+{
+  "lang_id": "ca_es",
+  "language": "Catalan",
+  "country": "Spain",
+  "continent": "Europe",
+  "forbidden": [
+    "catalan",
+    "catalonia",
+    "barcelona",
+    "spain",
+    "euro"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lang_id": "th_th",
+  "language": "Thai",
+  "country": "Thailand",
+  "continent": "Asia",
+  "forbidden": [
+    "thai",
+    "thailand",
+    "bangkok",
+    "baht"
+  ]
+}

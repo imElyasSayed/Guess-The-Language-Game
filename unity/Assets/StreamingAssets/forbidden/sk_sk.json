@@ -1,0 +1,12 @@
+{
+  "lang_id": "sk_sk",
+  "language": "Slovak",
+  "country": "Slovakia",
+  "continent": "Europe",
+  "forbidden": [
+    "slovak",
+    "slovakia",
+    "bratislava",
+    "euro"
+  ]
+}

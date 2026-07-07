@@ -1,0 +1,18 @@
+{
+  "lang_id": "ko_kr",
+  "language": "Korean",
+  "country": "South Korea",
+  "continent": "Asia",
+  "forbidden": [
+    "korean",
+    "hangul",
+    "hangeul",
+    "korea",
+    "south korea",
+    "seoul",
+    "won",
+    "k-pop",
+    "kimchi",
+    "samsung"
+  ]
+}

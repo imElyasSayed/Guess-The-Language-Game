@@ -1,0 +1,13 @@
+{
+  "lang_id": "ps_af",
+  "language": "Pashto",
+  "country": "Afghanistan",
+  "continent": "Asia",
+  "forbidden": [
+    "pashto",
+    "afghanistan",
+    "afghan",
+    "kabul",
+    "afghani"
+  ]
+}

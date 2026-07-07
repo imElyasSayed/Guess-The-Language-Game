@@ -1,0 +1,12 @@
+{
+  "lang_id": "kk_kz",
+  "language": "Kazakh",
+  "country": "Kazakhstan",
+  "continent": "Asia",
+  "forbidden": [
+    "kazakh",
+    "kazakhstan",
+    "astana",
+    "tenge"
+  ]
+}

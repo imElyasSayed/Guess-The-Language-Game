@@ -1,0 +1,13 @@
+{
+  "lang_id": "gl_es",
+  "language": "Galician",
+  "country": "Spain",
+  "continent": "Europe",
+  "forbidden": [
+    "galician",
+    "galicia",
+    "spain",
+    "santiago de compostela",
+    "euro"
+  ]
+}

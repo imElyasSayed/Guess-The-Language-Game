@@ -1,0 +1,15 @@
+{
+  "lang_id": "ff_sn",
+  "language": "Fula",
+  "country": "Senegal",
+  "continent": "Africa",
+  "forbidden": [
+    "fula",
+    "fulani",
+    "pulaar",
+    "senegal",
+    "senegalese",
+    "dakar",
+    "franc"
+  ]
+}

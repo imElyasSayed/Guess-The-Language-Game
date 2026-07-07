@@ -1,0 +1,14 @@
+{
+  "lang_id": "pa_in",
+  "language": "Punjabi",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "punjabi",
+    "punjab",
+    "india",
+    "indian",
+    "chandigarh",
+    "rupee"
+  ]
+}

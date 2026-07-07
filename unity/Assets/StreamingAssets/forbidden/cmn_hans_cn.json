@@ -1,0 +1,16 @@
+{
+  "lang_id": "cmn_hans_cn",
+  "language": "Mandarin Chinese",
+  "country": "China",
+  "continent": "Asia",
+  "forbidden": [
+    "mandarin",
+    "chinese",
+    "china",
+    "beijing",
+    "yuan",
+    "renminbi",
+    "great wall",
+    "panda"
+  ]
+}

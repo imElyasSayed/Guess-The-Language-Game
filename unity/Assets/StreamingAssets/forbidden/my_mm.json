@@ -1,0 +1,13 @@
+{
+  "lang_id": "my_mm",
+  "language": "Burmese",
+  "country": "Myanmar",
+  "continent": "Asia",
+  "forbidden": [
+    "burmese",
+    "myanmar",
+    "burma",
+    "yangon",
+    "kyat"
+  ]
+}

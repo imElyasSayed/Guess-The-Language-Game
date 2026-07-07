@@ -1,0 +1,13 @@
+{
+  "lang_id": "wo_sn",
+  "language": "Wolof",
+  "country": "Senegal",
+  "continent": "Africa",
+  "forbidden": [
+    "wolof",
+    "senegal",
+    "senegalese",
+    "dakar",
+    "franc"
+  ]
+}

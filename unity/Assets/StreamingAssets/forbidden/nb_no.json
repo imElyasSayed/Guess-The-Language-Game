@@ -1,0 +1,12 @@
+{
+  "lang_id": "nb_no",
+  "language": "Norwegian",
+  "country": "Norway",
+  "continent": "Europe",
+  "forbidden": [
+    "norwegian",
+    "norway",
+    "oslo",
+    "krone"
+  ]
+}

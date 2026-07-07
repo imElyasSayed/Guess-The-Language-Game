@@ -1,0 +1,13 @@
+{
+  "lang_id": "xh_za",
+  "language": "Xhosa",
+  "country": "South Africa",
+  "continent": "Africa",
+  "forbidden": [
+    "xhosa",
+    "south africa",
+    "south african",
+    "pretoria",
+    "rand"
+  ]
+}

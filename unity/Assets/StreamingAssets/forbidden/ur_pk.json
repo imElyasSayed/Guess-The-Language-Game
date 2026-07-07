@@ -1,0 +1,13 @@
+{
+  "lang_id": "ur_pk",
+  "language": "Urdu",
+  "country": "Pakistan",
+  "continent": "Asia",
+  "forbidden": [
+    "urdu",
+    "pakistan",
+    "pakistani",
+    "islamabad",
+    "rupee"
+  ]
+}

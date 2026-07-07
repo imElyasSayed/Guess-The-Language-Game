@@ -1,0 +1,13 @@
+{
+  "lang_id": "sn_zw",
+  "language": "Shona",
+  "country": "Zimbabwe",
+  "continent": "Africa",
+  "forbidden": [
+    "shona",
+    "zimbabwe",
+    "zimbabwean",
+    "harare",
+    "dollar"
+  ]
+}

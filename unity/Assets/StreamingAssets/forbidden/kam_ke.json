@@ -1,0 +1,13 @@
+{
+  "lang_id": "kam_ke",
+  "language": "Kamba",
+  "country": "Kenya",
+  "continent": "Africa",
+  "forbidden": [
+    "kamba",
+    "kenya",
+    "kenyan",
+    "nairobi",
+    "shilling"
+  ]
+}

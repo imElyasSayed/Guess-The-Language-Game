@@ -1,0 +1,13 @@
+{
+  "lang_id": "km_kh",
+  "language": "Khmer",
+  "country": "Cambodia",
+  "continent": "Asia",
+  "forbidden": [
+    "khmer",
+    "cambodia",
+    "cambodian",
+    "phnom penh",
+    "riel"
+  ]
+}

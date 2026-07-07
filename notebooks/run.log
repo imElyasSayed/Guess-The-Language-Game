@@ -26,3 +26,349 @@
   progress: 13/102 remaining languages processed
 [14/102] ca_es: pulled 15 clips
   progress: 14/102 remaining languages processed
+[15/102] ceb_ph: pulled 15 clips
+  progress: 15/102 remaining languages processed
+[16/102] ckb_iq: pulled 15 clips
+  progress: 16/102 remaining languages processed
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/cmn_hans_cn/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/cs_cz/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/cmn_hans_cn/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+[18/102] cs_cz: pulled 15 clips
+  progress: 17/102 remaining languages processed
+[17/102] cmn_hans_cn: pulled 15 clips
+  progress: 18/102 remaining languages processed
+[20/102] da_dk: pulled 15 clips
+  progress: 19/102 remaining languages processed
+[19/102] cy_gb: pulled 15 clips
+  progress: 20/102 remaining languages processed
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/el_gr/train-00000-of-00001.parquet
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/de_de/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+Retrying in 1s [Retry 1/5].
+[21/102] de_de: pulled 15 clips
+  progress: 21/102 remaining languages processed
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/el_gr/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/en_us/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+[22/102] el_gr: pulled 15 clips
+  progress: 22/102 remaining languages processed
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/en_us/train-00000-of-00001.parquet
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/et_ee/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+Retrying in 2s [Retry 2/5].
+[23/102] en_us: pulled 15 clips
+  progress: 23/102 remaining languages processed
+'peer closed connection without sending complete message body (received 622511436 bytes, expected 883083639)' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/fa_ir/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+[24/102] et_ee: pulled 15 clips
+  progress: 24/102 remaining languages processed
+[25/102] fa_ir: pulled 15 clips
+  progress: 25/102 remaining languages processed
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/ff_sn/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/fi_fi/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+[26/102] ff_sn: TIMED OUT after 900s -- skipping
+  progress: 26/102 remaining languages processed
+[27/102] fi_fi: pulled 15 clips
+  progress: 27/102 remaining languages processed
+[29/102] fr_fr: pulled 15 clips
+  progress: 28/102 remaining languages processed
+[28/102] fil_ph: pulled 15 clips
+  progress: 29/102 remaining languages processed
+[31/102] gl_es: pulled 15 clips
+  progress: 30/102 remaining languages processed
+[32/102] gu_in: pulled 15 clips
+  progress: 31/102 remaining languages processed
+[30/102] ga_ie: TIMED OUT after 900s -- skipping
+  progress: 32/102 remaining languages processed
+[33/102] ha_ng: pulled 15 clips
+  progress: 33/102 remaining languages processed
+[35/102] hi_in: pulled 15 clips
+  progress: 34/102 remaining languages processed
+[34/102] he_il: pulled 15 clips
+  progress: 35/102 remaining languages processed
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/ga_ie/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'The read operation timed out' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/hu_hu/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/hr_hr/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+[36/102] hr_hr: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 36/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/ga_ie/train-00000-of-00001.parquet
+Retrying in 2s [Retry 2/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/hu_hu/train-00000-of-00001.parquet
+Retrying in 2s [Retry 2/5].
+[37/102] hu_hu: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 37/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/hr_hr/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting GET https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/parquet-data/hu_hu/train-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[38/102] hy_am: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 38/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[39/102] id_id: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 39/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[40/102] ig_ng: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 40/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[41/102] is_is: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 41/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[42/102] it_it: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 42/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[43/102] jv_id: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 43/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[44/102] ka_ge: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 44/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[45/102] kam_ke: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 45/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[46/102] kea_cv: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 46/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[47/102] kk_kz: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 47/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[48/102] km_kh: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 48/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[49/102] kn_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 49/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[50/102] ko_kr: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 50/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[51/102] ky_kg: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 51/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[52/102] lb_lu: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 52/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[53/102] lg_ug: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 53/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[54/102] ln_cd: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 54/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[55/102] lo_la: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 55/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[56/102] lt_lt: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 56/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[57/102] luo_ke: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 57/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[58/102] lv_lv: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 58/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[59/102] mi_nz: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 59/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[60/102] mk_mk: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 60/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[61/102] ml_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 61/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[62/102] mn_mn: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 62/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[63/102] mr_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 63/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[64/102] ms_my: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 64/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[65/102] mt_mt: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 65/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[66/102] my_mm: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 66/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[67/102] nb_no: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 67/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[68/102] ne_np: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 68/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[69/102] nl_nl: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 69/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[70/102] nso_za: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 70/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[71/102] ny_mw: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 71/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[72/102] oc_fr: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 72/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[73/102] om_et: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 73/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[74/102] or_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 74/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[75/102] pa_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 75/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[76/102] pl_pl: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 76/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[77/102] ps_af: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 77/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[79/102] ro_ro: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 78/102 remaining languages processed
+[78/102] pt_br: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 79/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[80/102] ru_ru: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 80/102 remaining languages processed
+[81/102] sd_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 81/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[82/102] sk_sk: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 82/102 remaining languages processed
+[83/102] sl_si: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 83/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[84/102] sn_zw: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 84/102 remaining languages processed
+[85/102] so_so: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 85/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[86/102] sr_rs: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 86/102 remaining languages processed
+[87/102] sv_se: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 87/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[88/102] ta_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 88/102 remaining languages processed
+[89/102] te_in: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 89/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[90/102] tg_tj: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 90/102 remaining languages processed
+[91/102] th_th: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 91/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[92/102] tr_tr: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 92/102 remaining languages processed
+[93/102] uk_ua: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 93/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[94/102] umb_ao: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 94/102 remaining languages processed
+[95/102] ur_pk: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 95/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[96/102] uz_uz: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 96/102 remaining languages processed
+[97/102] vi_vn: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 97/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[98/102] wo_sn: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 98/102 remaining languages processed
+[99/102] xh_za: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 99/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[100/102] yo_ng: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 100/102 remaining languages processed
+[101/102] yue_hant_hk: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 101/102 remaining languages processed
+'[Errno 8] nodename nor servname provided, or not known' thrown while requesting HEAD https://huggingface.co/datasets/google/fleurs/resolve/70bb2e84b976b7e960aa89f1c648e09c59f894dd/fleurs.py
+Retrying in 1s [Retry 1/5].
+[102/102] zu_za: FAILED (RuntimeError('Cannot send a request, as the client has been closed.')) -- skipping
+  progress: 102/102 remaining languages processed
+
+69 language(s) failed/timed out: ['ff_sn', 'ga_ie', 'hr_hr', 'hu_hu', 'hy_am', 'id_id', 'ig_ng', 'is_is', 'it_it', 'jv_id', 'ka_ge', 'kam_ke', 'kea_cv', 'kk_kz', 'km_kh', 'kn_in', 'ko_kr', 'ky_kg', 'lb_lu', 'lg_ug', 'ln_cd', 'lo_la', 'lt_lt', 'luo_ke', 'lv_lv', 'mi_nz', 'mk_mk', 'ml_in', 'mn_mn', 'mr_in', 'ms_my', 'mt_mt', 'my_mm', 'nb_no', 'ne_np', 'nl_nl', 'nso_za', 'ny_mw', 'oc_fr', 'om_et', 'or_in', 'pa_in', 'pl_pl', 'ps_af', 'ro_ro', 'pt_br', 'ru_ru', 'sd_in', 'sk_sk', 'sl_si', 'sn_zw', 'so_so', 'sr_rs', 'sv_se', 'ta_in', 'te_in', 'tg_tj', 'th_th', 'tr_tr', 'uk_ua', 'umb_ao', 'ur_pk', 'uz_uz', 'vi_vn', 'wo_sn', 'xh_za', 'yo_ng', 'yue_hant_hk', 'zu_za']

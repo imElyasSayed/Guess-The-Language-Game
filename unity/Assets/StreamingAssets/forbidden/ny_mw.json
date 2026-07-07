@@ -1,0 +1,14 @@
+{
+  "lang_id": "ny_mw",
+  "language": "Chichewa",
+  "country": "Malawi",
+  "continent": "Africa",
+  "forbidden": [
+    "chichewa",
+    "nyanja",
+    "malawi",
+    "malawian",
+    "lilongwe",
+    "kwacha"
+  ]
+}

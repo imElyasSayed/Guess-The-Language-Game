@@ -1,0 +1,13 @@
+{
+  "lang_id": "sd_in",
+  "language": "Sindhi",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "sindhi",
+    "sindh",
+    "india",
+    "pakistan",
+    "rupee"
+  ]
+}

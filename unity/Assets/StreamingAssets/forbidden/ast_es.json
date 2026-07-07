@@ -1,0 +1,14 @@
+{
+  "lang_id": "ast_es",
+  "language": "Asturian",
+  "country": "Spain",
+  "continent": "Europe",
+  "forbidden": [
+    "asturian",
+    "asturias",
+    "spain",
+    "spanish",
+    "oviedo",
+    "euro"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "lang_id": "uk_ua",
+  "language": "Ukrainian",
+  "country": "Ukraine",
+  "continent": "Europe",
+  "forbidden": [
+    "ukrainian",
+    "ukraine",
+    "kyiv",
+    "kiev",
+    "hryvnia"
+  ]
+}

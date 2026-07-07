@@ -1,0 +1,13 @@
+{
+  "lang_id": "bs_ba",
+  "language": "Bosnian",
+  "country": "Bosnia and Herzegovina",
+  "continent": "Europe",
+  "forbidden": [
+    "bosnian",
+    "bosnia",
+    "herzegovina",
+    "sarajevo",
+    "mark"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lang_id": "da_dk",
+  "language": "Danish",
+  "country": "Denmark",
+  "continent": "Europe",
+  "forbidden": [
+    "danish",
+    "denmark",
+    "copenhagen",
+    "krone"
+  ]
+}

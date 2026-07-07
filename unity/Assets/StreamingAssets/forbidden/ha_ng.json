@@ -1,0 +1,13 @@
+{
+  "lang_id": "ha_ng",
+  "language": "Hausa",
+  "country": "Nigeria",
+  "continent": "Africa",
+  "forbidden": [
+    "hausa",
+    "nigeria",
+    "nigerian",
+    "abuja",
+    "naira"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "lang_id": "bn_in",
+  "language": "Bengali",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "bengali",
+    "bangla",
+    "india",
+    "indian",
+    "kolkata",
+    "rupee",
+    "bangladesh"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lang_id": "fr_fr",
+  "language": "French",
+  "country": "France",
+  "continent": "Europe",
+  "forbidden": [
+    "french",
+    "francais",
+    "france",
+    "paris",
+    "euro",
+    "eiffel",
+    "eiffel tower",
+    "louvre",
+    "baguette",
+    "croissant"
+  ]
+}

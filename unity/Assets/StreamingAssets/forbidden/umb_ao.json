@@ -1,0 +1,13 @@
+{
+  "lang_id": "umb_ao",
+  "language": "Umbundu",
+  "country": "Angola",
+  "continent": "Africa",
+  "forbidden": [
+    "umbundu",
+    "angola",
+    "angolan",
+    "luanda",
+    "kwanza"
+  ]
+}

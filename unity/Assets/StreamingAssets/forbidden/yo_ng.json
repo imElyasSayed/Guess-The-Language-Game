@@ -1,0 +1,13 @@
+{
+  "lang_id": "yo_ng",
+  "language": "Yoruba",
+  "country": "Nigeria",
+  "continent": "Africa",
+  "forbidden": [
+    "yoruba",
+    "nigeria",
+    "nigerian",
+    "lagos",
+    "naira"
+  ]
+}

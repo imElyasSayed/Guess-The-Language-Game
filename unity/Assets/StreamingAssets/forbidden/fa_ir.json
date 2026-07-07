@@ -1,0 +1,14 @@
+{
+  "lang_id": "fa_ir",
+  "language": "Persian",
+  "country": "Iran",
+  "continent": "Asia",
+  "forbidden": [
+    "persian",
+    "farsi",
+    "iran",
+    "iranian",
+    "tehran",
+    "rial"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lang_id": "uz_uz",
+  "language": "Uzbek",
+  "country": "Uzbekistan",
+  "continent": "Asia",
+  "forbidden": [
+    "uzbek",
+    "uzbekistan",
+    "tashkent",
+    "som"
+  ]
+}

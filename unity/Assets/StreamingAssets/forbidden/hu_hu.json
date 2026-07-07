@@ -1,0 +1,12 @@
+{
+  "lang_id": "hu_hu",
+  "language": "Hungarian",
+  "country": "Hungary",
+  "continent": "Europe",
+  "forbidden": [
+    "hungarian",
+    "hungary",
+    "budapest",
+    "forint"
+  ]
+}

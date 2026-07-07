@@ -1,0 +1,15 @@
+{
+  "lang_id": "ckb_iq",
+  "language": "Central Kurdish",
+  "country": "Iraq",
+  "continent": "Asia",
+  "forbidden": [
+    "kurdish",
+    "sorani",
+    "iraq",
+    "iraqi",
+    "baghdad",
+    "kurdistan",
+    "dinar"
+  ]
+}

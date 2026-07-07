@@ -1,0 +1,12 @@
+{
+  "lang_id": "lv_lv",
+  "language": "Latvian",
+  "country": "Latvia",
+  "continent": "Europe",
+  "forbidden": [
+    "latvian",
+    "latvia",
+    "riga",
+    "euro"
+  ]
+}

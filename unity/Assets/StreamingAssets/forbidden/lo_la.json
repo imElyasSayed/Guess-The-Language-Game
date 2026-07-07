@@ -1,0 +1,13 @@
+{
+  "lang_id": "lo_la",
+  "language": "Lao",
+  "country": "Laos",
+  "continent": "Asia",
+  "forbidden": [
+    "lao",
+    "laos",
+    "laotian",
+    "vientiane",
+    "kip"
+  ]
+}

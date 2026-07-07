@@ -1,0 +1,14 @@
+{
+  "lang_id": "as_in",
+  "language": "Assamese",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "assamese",
+    "assam",
+    "india",
+    "indian",
+    "guwahati",
+    "rupee"
+  ]
+}

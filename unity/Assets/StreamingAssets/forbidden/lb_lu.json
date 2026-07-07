@@ -1,0 +1,11 @@
+{
+  "lang_id": "lb_lu",
+  "language": "Luxembourgish",
+  "country": "Luxembourg",
+  "continent": "Europe",
+  "forbidden": [
+    "luxembourgish",
+    "luxembourg",
+    "euro"
+  ]
+}

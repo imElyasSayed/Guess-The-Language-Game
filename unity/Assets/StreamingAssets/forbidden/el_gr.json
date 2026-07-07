@@ -1,0 +1,13 @@
+{
+  "lang_id": "el_gr",
+  "language": "Greek",
+  "country": "Greece",
+  "continent": "Europe",
+  "forbidden": [
+    "greek",
+    "greece",
+    "athens",
+    "euro",
+    "acropolis"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lang_id": "ka_ge",
+  "language": "Georgian",
+  "country": "Georgia",
+  "continent": "Asia",
+  "forbidden": [
+    "georgian",
+    "georgia",
+    "tbilisi",
+    "lari"
+  ]
+}

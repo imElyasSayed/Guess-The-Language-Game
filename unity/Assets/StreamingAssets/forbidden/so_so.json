@@ -1,0 +1,12 @@
+{
+  "lang_id": "so_so",
+  "language": "Somali",
+  "country": "Somalia",
+  "continent": "Africa",
+  "forbidden": [
+    "somali",
+    "somalia",
+    "mogadishu",
+    "shilling"
+  ]
+}

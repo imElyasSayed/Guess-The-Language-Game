@@ -1,0 +1,13 @@
+{
+  "lang_id": "ru_ru",
+  "language": "Russian",
+  "country": "Russia",
+  "continent": "Europe",
+  "forbidden": [
+    "russian",
+    "russia",
+    "moscow",
+    "ruble",
+    "kremlin"
+  ]
+}

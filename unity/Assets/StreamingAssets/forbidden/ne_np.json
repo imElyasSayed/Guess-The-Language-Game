@@ -1,0 +1,13 @@
+{
+  "lang_id": "ne_np",
+  "language": "Nepali",
+  "country": "Nepal",
+  "continent": "Asia",
+  "forbidden": [
+    "nepali",
+    "nepal",
+    "kathmandu",
+    "rupee",
+    "everest"
+  ]
+}

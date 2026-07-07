@@ -1,0 +1,14 @@
+{
+  "lang_id": "cy_gb",
+  "language": "Welsh",
+  "country": "United Kingdom",
+  "continent": "Europe",
+  "forbidden": [
+    "welsh",
+    "wales",
+    "cardiff",
+    "united kingdom",
+    "britain",
+    "pound"
+  ]
+}

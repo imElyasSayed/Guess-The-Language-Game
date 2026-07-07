@@ -1,0 +1,14 @@
+{
+  "lang_id": "te_in",
+  "language": "Telugu",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "telugu",
+    "andhra pradesh",
+    "telangana",
+    "india",
+    "hyderabad",
+    "rupee"
+  ]
+}

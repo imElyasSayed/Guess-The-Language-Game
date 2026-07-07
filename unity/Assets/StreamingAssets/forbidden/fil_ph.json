@@ -1,0 +1,13 @@
+{
+  "lang_id": "fil_ph",
+  "language": "Filipino",
+  "country": "Philippines",
+  "continent": "Asia",
+  "forbidden": [
+    "filipino",
+    "tagalog",
+    "philippines",
+    "manila",
+    "peso"
+  ]
+}

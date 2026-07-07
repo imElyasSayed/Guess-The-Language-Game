@@ -1,0 +1,14 @@
+{
+  "lang_id": "or_in",
+  "language": "Odia",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "odia",
+    "oriya",
+    "odisha",
+    "india",
+    "bhubaneswar",
+    "rupee"
+  ]
+}

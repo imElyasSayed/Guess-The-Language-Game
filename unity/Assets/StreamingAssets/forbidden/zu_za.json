@@ -1,0 +1,13 @@
+{
+  "lang_id": "zu_za",
+  "language": "Zulu",
+  "country": "South Africa",
+  "continent": "Africa",
+  "forbidden": [
+    "zulu",
+    "south africa",
+    "south african",
+    "pretoria",
+    "rand"
+  ]
+}

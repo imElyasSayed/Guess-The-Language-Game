@@ -1,0 +1,18 @@
+{
+  "lang_id": "de_de",
+  "language": "German",
+  "country": "Germany",
+  "continent": "Europe",
+  "forbidden": [
+    "german",
+    "deutsch",
+    "germany",
+    "deutschland",
+    "berlin",
+    "euro",
+    "bavaria",
+    "oktoberfest",
+    "bratwurst",
+    "volkswagen"
+  ]
+}

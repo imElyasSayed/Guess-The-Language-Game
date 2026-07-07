@@ -1,0 +1,12 @@
+{
+  "lang_id": "lt_lt",
+  "language": "Lithuanian",
+  "country": "Lithuania",
+  "continent": "Europe",
+  "forbidden": [
+    "lithuanian",
+    "lithuania",
+    "vilnius",
+    "euro"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "lang_id": "ga_ie",
+  "language": "Irish",
+  "country": "Ireland",
+  "continent": "Europe",
+  "forbidden": [
+    "irish",
+    "gaelic",
+    "ireland",
+    "dublin",
+    "euro"
+  ]
+}

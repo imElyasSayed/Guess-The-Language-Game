@@ -1,0 +1,14 @@
+{
+  "lang_id": "af_za",
+  "language": "Afrikaans",
+  "country": "South Africa",
+  "continent": "Africa",
+  "forbidden": [
+    "afrikaans",
+    "south africa",
+    "south african",
+    "pretoria",
+    "cape town",
+    "rand"
+  ]
+}

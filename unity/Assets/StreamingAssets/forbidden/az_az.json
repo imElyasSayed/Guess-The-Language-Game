@@ -1,0 +1,13 @@
+{
+  "lang_id": "az_az",
+  "language": "Azerbaijani",
+  "country": "Azerbaijan",
+  "continent": "Asia",
+  "forbidden": [
+    "azerbaijani",
+    "azeri",
+    "azerbaijan",
+    "baku",
+    "manat"
+  ]
+}

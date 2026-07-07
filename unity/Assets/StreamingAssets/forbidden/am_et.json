@@ -1,0 +1,13 @@
+{
+  "lang_id": "am_et",
+  "language": "Amharic",
+  "country": "Ethiopia",
+  "continent": "Africa",
+  "forbidden": [
+    "amharic",
+    "ethiopia",
+    "ethiopian",
+    "addis ababa",
+    "birr"
+  ]
+}

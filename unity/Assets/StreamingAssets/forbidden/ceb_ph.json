@@ -1,0 +1,14 @@
+{
+  "lang_id": "ceb_ph",
+  "language": "Cebuano",
+  "country": "Philippines",
+  "continent": "Asia",
+  "forbidden": [
+    "cebuano",
+    "cebu",
+    "philippines",
+    "filipino",
+    "manila",
+    "peso"
+  ]
+}

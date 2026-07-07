@@ -1,0 +1,12 @@
+{
+  "lang_id": "bg_bg",
+  "language": "Bulgarian",
+  "country": "Bulgaria",
+  "continent": "Europe",
+  "forbidden": [
+    "bulgarian",
+    "bulgaria",
+    "sofia",
+    "lev"
+  ]
+}

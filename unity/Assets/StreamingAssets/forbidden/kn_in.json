@@ -1,0 +1,13 @@
+{
+  "lang_id": "kn_in",
+  "language": "Kannada",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "kannada",
+    "karnataka",
+    "india",
+    "bangalore",
+    "rupee"
+  ]
+}

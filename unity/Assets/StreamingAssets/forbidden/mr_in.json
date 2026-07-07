@@ -1,0 +1,13 @@
+{
+  "lang_id": "mr_in",
+  "language": "Marathi",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "marathi",
+    "maharashtra",
+    "india",
+    "mumbai",
+    "rupee"
+  ]
+}

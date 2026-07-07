@@ -1,0 +1,13 @@
+{
+  "lang_id": "he_il",
+  "language": "Hebrew",
+  "country": "Israel",
+  "continent": "Asia",
+  "forbidden": [
+    "hebrew",
+    "israel",
+    "israeli",
+    "jerusalem",
+    "shekel"
+  ]
+}

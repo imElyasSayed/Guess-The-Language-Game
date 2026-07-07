@@ -1,0 +1,18 @@
+{
+  "lang_id": "ar_eg",
+  "language": "Arabic",
+  "country": "Egypt",
+  "continent": "Africa",
+  "forbidden": [
+    "arabic",
+    "egyptian",
+    "egypt",
+    "cairo",
+    "pound",
+    "pyramid",
+    "pyramids",
+    "nile",
+    "sphinx",
+    "giza"
+  ]
+}

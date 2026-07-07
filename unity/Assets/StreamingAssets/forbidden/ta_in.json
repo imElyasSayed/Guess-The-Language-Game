@@ -1,0 +1,14 @@
+{
+  "lang_id": "ta_in",
+  "language": "Tamil",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "tamil",
+    "tamil nadu",
+    "india",
+    "chennai",
+    "rupee",
+    "sri lanka"
+  ]
+}

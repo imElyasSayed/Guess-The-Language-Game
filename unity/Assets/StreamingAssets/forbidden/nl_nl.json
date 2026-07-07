@@ -1,0 +1,13 @@
+{
+  "lang_id": "nl_nl",
+  "language": "Dutch",
+  "country": "Netherlands",
+  "continent": "Europe",
+  "forbidden": [
+    "dutch",
+    "netherlands",
+    "holland",
+    "amsterdam",
+    "euro"
+  ]
+}

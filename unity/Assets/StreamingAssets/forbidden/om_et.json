@@ -1,0 +1,13 @@
+{
+  "lang_id": "om_et",
+  "language": "Oromo",
+  "country": "Ethiopia",
+  "continent": "Africa",
+  "forbidden": [
+    "oromo",
+    "ethiopia",
+    "ethiopian",
+    "addis ababa",
+    "birr"
+  ]
+}

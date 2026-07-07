@@ -1,0 +1,13 @@
+{
+  "lang_id": "ml_in",
+  "language": "Malayalam",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "malayalam",
+    "kerala",
+    "india",
+    "indian",
+    "rupee"
+  ]
+}

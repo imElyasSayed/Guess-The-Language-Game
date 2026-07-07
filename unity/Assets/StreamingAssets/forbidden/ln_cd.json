@@ -1,0 +1,13 @@
+{
+  "lang_id": "ln_cd",
+  "language": "Lingala",
+  "country": "Democratic Republic of the Congo",
+  "continent": "Africa",
+  "forbidden": [
+    "lingala",
+    "congo",
+    "congolese",
+    "kinshasa",
+    "franc"
+  ]
+}

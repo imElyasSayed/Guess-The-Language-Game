@@ -1,0 +1,12 @@
+{
+  "lang_id": "cs_cz",
+  "language": "Czech",
+  "country": "Czech Republic",
+  "continent": "Europe",
+  "forbidden": [
+    "czech",
+    "czechia",
+    "prague",
+    "koruna"
+  ]
+}

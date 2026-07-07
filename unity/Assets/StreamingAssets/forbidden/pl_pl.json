@@ -1,0 +1,12 @@
+{
+  "lang_id": "pl_pl",
+  "language": "Polish",
+  "country": "Poland",
+  "continent": "Europe",
+  "forbidden": [
+    "polish",
+    "poland",
+    "warsaw",
+    "zloty"
+  ]
+}

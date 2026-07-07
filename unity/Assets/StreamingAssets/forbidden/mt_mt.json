@@ -1,0 +1,12 @@
+{
+  "lang_id": "mt_mt",
+  "language": "Maltese",
+  "country": "Malta",
+  "continent": "Europe",
+  "forbidden": [
+    "maltese",
+    "malta",
+    "valletta",
+    "euro"
+  ]
+}

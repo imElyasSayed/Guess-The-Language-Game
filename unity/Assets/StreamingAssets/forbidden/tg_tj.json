@@ -1,0 +1,12 @@
+{
+  "lang_id": "tg_tj",
+  "language": "Tajik",
+  "country": "Tajikistan",
+  "continent": "Asia",
+  "forbidden": [
+    "tajik",
+    "tajikistan",
+    "dushanbe",
+    "somoni"
+  ]
+}

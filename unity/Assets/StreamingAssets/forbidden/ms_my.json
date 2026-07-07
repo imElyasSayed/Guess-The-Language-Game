@@ -1,0 +1,13 @@
+{
+  "lang_id": "ms_my",
+  "language": "Malay",
+  "country": "Malaysia",
+  "continent": "Asia",
+  "forbidden": [
+    "malay",
+    "malaysia",
+    "malaysian",
+    "kuala lumpur",
+    "ringgit"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "lang_id": "nso_za",
+  "language": "Northern Sotho",
+  "country": "South Africa",
+  "continent": "Africa",
+  "forbidden": [
+    "sotho",
+    "sepedi",
+    "south africa",
+    "south african",
+    "pretoria",
+    "rand"
+  ]
+}

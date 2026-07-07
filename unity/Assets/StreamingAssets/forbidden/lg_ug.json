@@ -1,0 +1,14 @@
+{
+  "lang_id": "lg_ug",
+  "language": "Luganda",
+  "country": "Uganda",
+  "continent": "Africa",
+  "forbidden": [
+    "luganda",
+    "ganda",
+    "uganda",
+    "ugandan",
+    "kampala",
+    "shilling"
+  ]
+}

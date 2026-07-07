@@ -1,0 +1,13 @@
+{
+  "lang_id": "kea_cv",
+  "language": "Kabuverdianu",
+  "country": "Cape Verde",
+  "continent": "Africa",
+  "forbidden": [
+    "kabuverdianu",
+    "cape verdean",
+    "cape verde",
+    "praia",
+    "escudo"
+  ]
+}

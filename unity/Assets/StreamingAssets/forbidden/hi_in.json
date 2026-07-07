@@ -1,0 +1,17 @@
+{
+  "lang_id": "hi_in",
+  "language": "Hindi",
+  "country": "India",
+  "continent": "Asia",
+  "forbidden": [
+    "hindi",
+    "india",
+    "indian",
+    "delhi",
+    "new delhi",
+    "rupee",
+    "bollywood",
+    "taj mahal",
+    "ganges"
+  ]
+}

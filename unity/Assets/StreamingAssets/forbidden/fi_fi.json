@@ -1,0 +1,12 @@
+{
+  "lang_id": "fi_fi",
+  "language": "Finnish",
+  "country": "Finland",
+  "continent": "Europe",
+  "forbidden": [
+    "finnish",
+    "finland",
+    "helsinki",
+    "euro"
+  ]
+}

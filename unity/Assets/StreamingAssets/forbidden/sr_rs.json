@@ -1,0 +1,12 @@
+{
+  "lang_id": "sr_rs",
+  "language": "Serbian",
+  "country": "Serbia",
+  "continent": "Europe",
+  "forbidden": [
+    "serbian",
+    "serbia",
+    "belgrade",
+    "dinar"
+  ]
+}

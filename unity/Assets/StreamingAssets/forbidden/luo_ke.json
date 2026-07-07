@@ -1,0 +1,13 @@
+{
+  "lang_id": "luo_ke",
+  "language": "Luo",
+  "country": "Kenya",
+  "continent": "Africa",
+  "forbidden": [
+    "luo",
+    "kenya",
+    "kenyan",
+    "nairobi",
+    "shilling"
+  ]
+}
