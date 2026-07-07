@@ -42,30 +42,52 @@ CURL_TIP  = L.mat("CurlTip",   (0.88, 0.68, 0.26), rough=0.5)
 # Face / body kit
 # --------------------------------------------------------------------------- #
 
-def eye_pair(cy, cz, spacing, r, skin, lid=0.0, look=(0.0, 0.0), squint=1.0):
-    """Cartoon eyes: white ball, embedded iris, pupil, specular sparkle, optional
-    upper lid (0..1 = how heavy/half-closed). look = (x,z) pupil offset."""
+IRIS_RING = L.mat("IrisRing", (0.10, 0.05, 0.02), rough=0.35)
+LIP       = L.mat("Lip", (0.42, 0.22, 0.16), rough=0.6)
+
+
+def eye_pair(cy, cz, spacing, r, skin, lid=0.0, look=(0.0, 0.0), squint=1.0, lid_rim=True):
+    """Finished cartoon eyes: white ball, dark limbal ring, iris, pupil, specular
+    sparkle, subtle upper-lid rim, optional heavy lid (0..1 = half-closed)."""
     parts = []
     for s in (-1, 1):
         w = L.sphere("eyeW", radius=r, scale=(1, 0.75, squint), loc=(s * spacing, cy, cz))
         w.data.materials.append(EYE_WHITE)
         ix, iz = look
-        iris = L.sphere("iris", radius=r * 0.52, segments=12, rings=8,
-                        loc=(s * spacing + ix, cy + r * 0.62, cz + iz))
+        ring = L.sphere("limbal", radius=r * 0.60, segments=12, rings=8,
+                        loc=(s * spacing + ix, cy + r * 0.55, cz + iz))
+        ring.data.materials.append(IRIS_RING)
+        iris = L.sphere("iris", radius=r * 0.50, segments=12, rings=8,
+                        loc=(s * spacing + ix, cy + r * 0.66, cz + iz))
         iris.data.materials.append(IRIS)
-        pup = L.sphere("pupil", radius=r * 0.28, segments=10, rings=6,
-                       loc=(s * spacing + ix, cy + r * 0.78, cz + iz))
+        pup = L.sphere("pupil", radius=r * 0.26, segments=10, rings=6,
+                       loc=(s * spacing + ix, cy + r * 0.82, cz + iz))
         pup.data.materials.append(PUPIL)
         spark = L.sphere("spark", radius=r * 0.10, segments=8, rings=6,
-                         loc=(s * spacing + ix - r * 0.14, cy + r * 0.92, cz + iz + r * 0.20))
+                         loc=(s * spacing + ix - r * 0.16, cy + r * 0.94, cz + iz + r * 0.22))
         spark.data.materials.append(SPARK)
-        parts += [w, iris, pup, spark]
+        parts += [w, ring, iris, pup, spark]
+        if lid_rim:
+            rim = L.torus("lidRim", major=r * 0.92, minor=r * 0.16, mseg=14, minseg=6,
+                          rot=(math.radians(78), 0, 0),
+                          loc=(s * spacing, cy - r * 0.10, cz + r * squint * 0.62))
+            rim.data.materials.append(skin)
+            parts.append(rim)
         if lid > 0.0:
             lidS = L.sphere("lid", radius=r * 1.08, scale=(1.05, 0.8, 0.55),
                             loc=(s * spacing, cy - r * 0.06, cz + r * (1.15 - lid * 0.55)))
             lidS.data.materials.append(skin)
             parts.append(lidS)
     return parts
+
+
+def lips(cy, cz, w, h, mat=LIP):
+    """Modeled lip ring framing the mouth opening — finishes the face instantly."""
+    ring = L.torus("lips", major=w, minor=min(0.02, w * 0.22), mseg=18, minseg=8,
+                   rot=(math.radians(90), 0, 0), scale=(1.0, h / max(w, 1e-4), 1.0),
+                   loc=(0, cy, cz))
+    ring.data.materials.append(mat)
+    return [ring]
 
 
 def brow_pair(cy, cz, spacing, width, mat, tilt=0.0, thick=0.05):
@@ -256,16 +278,22 @@ def somali_curls(head_c, head_r):
 
 
 def hand(center, r, skin, thumb=(1, 0, 0)):
+    """Real cartoon hand: palm + three slightly-curled fingers + a thumb."""
+    cx, cy, cz = center
     parts = []
-    palm = L.sphere("palm", radius=r, scale=(1.0, 1.15, 0.9), loc=center)
+    palm = L.sphere("palm", radius=r * 0.92, scale=(1.05, 1.1, 0.8), loc=center)
     palm.data.materials.append(skin)
     parts.append(palm)
-    t = L.sphere("thumb", radius=r * 0.45, segments=10, rings=6,
-                 loc=(center[0] + thumb[0] * r * 0.9,
-                      center[1] + thumb[1] * r * 0.9,
-                      center[2] + thumb[2] * r * 0.9))
-    t.data.materials.append(skin)
-    parts.append(t)
+    # three fingers fanning forward-down from the palm edge
+    for fx in (-0.5, 0.0, 0.5):
+        fr = r * (0.30 - abs(fx) * 0.05)
+        base = (cx + fx * r * 0.7, cy + r * 0.75, cz - r * 0.15)
+        tip = (cx + fx * r * 0.85, cy + r * 1.45, cz - r * 0.62)
+        parts.append(L.capsule("finger", base, tip, fr, material=skin, verts=8, rings=5))
+    # thumb
+    tbase = (cx + thumb[0] * r * 0.65, cy + thumb[1] * r * 0.5, cz + thumb[2] * r * 0.4)
+    ttip = (cx + thumb[0] * r * 1.25, cy + thumb[1] * r * 1.05, cz + thumb[2] * r * 0.7 - r * 0.2)
+    parts.append(L.capsule("thumb", tbase, ttip, r * 0.30, material=skin, verts=8, rings=5))
     return parts
 
 
@@ -350,6 +378,7 @@ def char_chunkz(name="P1_Chunkz"):
     face += brow_pair(0.31, 1.85, 0.13, 0.09, HAIR_BLK, tilt=0.25)
     # signature: big open grin with THE TOOTH GAP
     face += open_smile(0.335, 1.55, 0.16, 0.08, gap=True, tongue=True)
+    face += lips(0.335, 1.55, 0.16, 0.09)
     # chin-strap beard shadow
     face += goatee(0.315, 1.47, w=0.10)
     # black cap with the blonde wig fringe
@@ -415,6 +444,7 @@ def char_niko(name="P2_Niko"):
     face += brow_pair(0.34, 2.66, 0.10, 0.08, HAIR_BLK, tilt=0.2)
     # smug grin + chin-strap beard
     face += open_smile(0.375, 2.26, 0.12, 0.07, teeth=True)
+    face += lips(0.375, 2.26, 0.12, 0.075)
     face += goatee(0.36, 2.20, w=0.075, mustache_z=2.335)
     face += cheek_pair(0.15, 0.32, 2.31, 0.06, skin)
     # curly top with fade
@@ -560,6 +590,7 @@ def char_sharky(name="P4_Sharky"):
     face += brow_pair(0.245, 2.08, 0.095, 0.08, HAIR_BLK, tilt=-0.1)
     # easy grin peeking through the beard
     face += open_smile(0.30, 1.82, 0.09, 0.045, teeth=True)
+    face += lips(0.30, 1.82, 0.09, 0.05)
     # BACKWARDS black cap
     face += cap((0, 0.03, 1.98), 0.24, brim_forward=False, cap_mat=HAIR_BLK)
 
@@ -617,6 +648,7 @@ def char_aj(name="P5_AJ"):
     face += eye_pair(0.225, 2.00, 0.095, 0.075, skin, squint=1.1)
     face += brow_pair(0.235, 2.11, 0.10, 0.08, HAIR_BLK, tilt=0.1)
     face += open_smile(0.275, 1.80, 0.09, 0.05, teeth=True)
+    face += lips(0.275, 1.80, 0.09, 0.055)
     face += goatee(0.245, 1.72, w=0.06, mustache_z=1.855)
     face += cheek_pair(0.11, 0.20, 1.85, 0.05, skin)
     # THE curls: big two-tone crown

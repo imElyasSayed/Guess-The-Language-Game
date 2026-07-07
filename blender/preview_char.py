@@ -41,6 +41,6 @@ for k, (builder, cam, tgt) in SPECS.items():
     builder()
     C.hide_breath()
     tris = sum(len(o.data.polygons) for o in bpy.context.scene.objects if o.type == "MESH")
-    L.render_preview(os.path.join(PREV, f"dev_{k}.png"), cam, tgt, res=700)
+    L.render_preview(os.path.join(PREV, f"dev_{k}.png"), cam, tgt, res=700, studio=True)
     print(f"[PREVIEW] {k} faces={tris}")
 print("[DONE]")

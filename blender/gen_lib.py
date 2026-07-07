@@ -140,6 +140,74 @@ def subsurf(obj, levels=2):
     return obj
 
 
+def decimate(obj, ratio):
+    mod = obj.modifiers.new("dec", "DECIMATE")
+    mod.ratio = ratio
+    _select_only([obj])
+    bpy.ops.object.modifier_apply(modifier=mod.name)
+    return obj
+
+
+def blob(name, elements, resolution=0.02, dec=0.4, material=None, grow=1.0, pivot=None,
+         fit=None):
+    """Metaball fusion: sculpt one CONTINUOUS organic surface from blended blobs
+    (digital clay) instead of intersecting spheres. This kills the ball-stack look.
+
+    elements: list of dicts:
+      {"co": (x,y,z), "r": radius}                                   - ball
+      {"co": (x,y,z), "r": radius, "s": (sx,sy,sz)}                  - ellipsoid
+      optional "stiff": 2.0 (higher = tighter, more defined feature)
+    """
+    mb = bpy.data.metaballs.new(name)
+    mb.resolution = resolution
+    mbobj = bpy.data.objects.new(name, mb)
+    bpy.context.scene.collection.objects.link(mbobj)
+    for spec in elements:
+        r = spec["r"]
+        if "s" in spec:
+            e = mb.elements.new(type="ELLIPSOID")
+            # Blender ellipsoid size_* are per-axis multipliers of radius; callers
+            # pass absolute half-extents, so normalise by r here.
+            sx, sy, sz = spec["s"]
+            e.size_x, e.size_y, e.size_z = sx / r, sy / r, sz / r
+        else:
+            e = mb.elements.new()
+        e.co = spec["co"]
+        e.radius = r
+        e.stiffness = spec.get("stiff", 2.0)
+    _select_only([mbobj])
+    bpy.ops.object.convert(target="MESH")
+    o = bpy.context.active_object
+    o.name = name
+    if fit is not None:
+        # Metaball surfaces sit well inside their element radii, so exact size is
+        # hard to author blind. fit=(center, size) affine-fits the fused mesh into
+        # a target box: the blend SHAPE is the metaballs', the SIZE/placement is
+        # exactly what the caller designed feature positions against.
+        centre, size = Vector(fit[0]), Vector(fit[1])
+        xs = [v.co for v in o.data.vertices]
+        lo = Vector((min(v.x for v in xs), min(v.y for v in xs), min(v.z for v in xs)))
+        hi = Vector((max(v.x for v in xs), max(v.y for v in xs), max(v.z for v in xs)))
+        cur_c = (lo + hi) * 0.5
+        cur_s = hi - lo
+        sc = Vector((size.x / max(cur_s.x, 1e-5), size.y / max(cur_s.y, 1e-5),
+                     size.z / max(cur_s.z, 1e-5)))
+        o.data.transform(Matrix.Translation(centre) @
+                         Matrix.Diagonal((sc.x, sc.y, sc.z, 1.0)) @
+                         Matrix.Translation(-cur_c))
+    elif grow != 1.0:
+        p = Vector(pivot) if pivot else Vector((0, 0, 0))
+        o.data.transform(Matrix.Translation(p) @
+                         Matrix.Diagonal((grow, grow, grow, 1.0)) @
+                         Matrix.Translation(-p))
+    if dec and dec < 1.0:
+        decimate(o, dec)
+    shade_smooth(o)
+    if material:
+        o.data.materials.append(material)
+    return o
+
+
 # --------------------------------------------------------------------------- #
 # Materials
 # --------------------------------------------------------------------------- #
@@ -297,7 +365,9 @@ def _look_at(cam, target):
 
 
 def render_preview(filepath, cam_loc, target=(0, 0, 1), res=640, ortho=None,
-                   sun_energy=3.0, bg=(0.05, 0.04, 0.03)):
+                   sun_energy=3.0, bg=(0.05, 0.04, 0.03), studio=False):
+    """Render the scene. studio=True adds a warm ground disc + three-point
+    lighting (key/fill/rim) for character-presentation shots."""
     scene = bpy.context.scene
     # World background
     scene.world = scene.world or bpy.data.worlds.new("W")
@@ -317,15 +387,38 @@ def render_preview(filepath, cam_loc, target=(0, 0, 1), res=640, ortho=None,
     _look_at(cam, target)
     scene.camera = cam
 
+    tmp = []
+
     key = bpy.data.objects.new("Key", bpy.data.lights.new("Key", "SUN"))
     key.data.energy = sun_energy
     key.rotation_euler = (0.9, 0.1, 0.6)
     bpy.context.scene.collection.objects.link(key)
+    tmp.append(key)
 
     fill = bpy.data.objects.new("Fill", bpy.data.lights.new("Fill", "SUN"))
     fill.data.energy = sun_energy * 0.4
     fill.rotation_euler = (1.1, 0.0, -2.2)
     bpy.context.scene.collection.objects.link(fill)
+    tmp.append(fill)
+
+    if studio:
+        key.data.energy = sun_energy * 1.1
+        key.data.color = (1.0, 0.92, 0.8)        # warm key
+        fill.data.color = (0.75, 0.82, 1.0)      # cool fill
+        rim = bpy.data.objects.new("Rim", bpy.data.lights.new("Rim", "SUN"))
+        rim.data.energy = sun_energy * 1.6       # bright back rim pops the silhouette
+        rim.data.color = (1.0, 0.85, 0.6)
+        rim.rotation_euler = (1.85, 0.0, 2.8)
+        bpy.context.scene.collection.objects.link(rim)
+        tmp.append(rim)
+
+        ground_mat = mat("StudioGround", (0.11, 0.085, 0.065), rough=0.9)
+        bpy.ops.mesh.primitive_cylinder_add(vertices=48, radius=2.2, depth=0.05)
+        ground = bpy.context.active_object
+        ground.name = "StudioGround"
+        ground.data.transform(_xform_matrix(loc=(0, 0, -0.028)))
+        ground.data.materials.append(ground_mat)
+        tmp.append(ground)
 
     try:
         scene.render.engine = "BLENDER_EEVEE_NEXT"
@@ -338,5 +431,5 @@ def render_preview(filepath, cam_loc, target=(0, 0, 1), res=640, ortho=None,
     bpy.ops.render.render(write_still=True)
 
     # tidy up preview-only objects
-    for o in (cam, key, fill):
+    for o in [cam] + tmp:
         bpy.data.objects.remove(o, do_unlink=True)

@@ -41,7 +41,7 @@ def _roots():
     return [o for o in bpy.context.scene.objects if o.parent is None]
 
 
-def make(builder, fbx_name, subdir, cam, target, res=640, ortho=None):
+def make(builder, fbx_name, subdir, cam, target, res=640, ortho=None, studio=False):
     L.reset()
     obj = builder()
     C.hide_breath()  # preview renders show the puff toggled off, matching in-game default
@@ -50,7 +50,8 @@ def make(builder, fbx_name, subdir, cam, target, res=640, ortho=None):
     fbx_path = os.path.join(subdir, fbx_name + ".fbx")
     L.export_fbx(roots, fbx_path)
     tris = sum(L.poly_count(o) for o in bpy.context.scene.objects if o.type == "MESH")
-    L.render_preview(os.path.join(PREV, fbx_name + ".png"), cam, target, res=res, ortho=ortho)
+    L.render_preview(os.path.join(PREV, fbx_name + ".png"), cam, target, res=res, ortho=ortho,
+                     studio=studio)
     print(f"[BUILT] {fbx_name:16s} faces={tris:5d} -> {fbx_path}")
     return tris
 
@@ -63,12 +64,12 @@ def build_props():
 
 def build_characters():
     # front-facing 3/4 previews; characters face +Y so shoot from +Y
-    make(C.char_chunkz, "P1_Chunkz",       CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.05))
-    make(C.char_niko,   "P2_Niko",         CHAR_DIR, (1.1, 4.0, 2.1), (0, 0.1, 1.40))
-    make(C.char_kenny,  "P3_Kenny",        CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.10))
-    make(C.char_sharky, "P4_Sharky",       CHAR_DIR, (1.1, 3.6, 1.6), (0, 0.1, 1.15))
-    make(C.char_aj,     "P5_AJ",           CHAR_DIR, (1.1, 3.6, 1.7), (0, 0.1, 1.20))
-    make(C.announcer,   "Announcer_Host",  CHAR_DIR, (1.2, 3.6, 1.6), (0, 0.1, 1.15))
+    make(C.char_chunkz, "P1_Chunkz",       CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.05), studio=True)
+    make(C.char_niko,   "P2_Niko",         CHAR_DIR, (1.1, 4.0, 2.1), (0, 0.1, 1.40), studio=True)
+    make(C.char_kenny,  "P3_Kenny",        CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.10), studio=True)
+    make(C.char_sharky, "P4_Sharky",       CHAR_DIR, (1.1, 3.6, 1.6), (0, 0.1, 1.15), studio=True)
+    make(C.char_aj,     "P5_AJ",           CHAR_DIR, (1.1, 3.6, 1.7), (0, 0.1, 1.20), studio=True)
+    make(C.announcer,   "Announcer_Host",  CHAR_DIR, (1.2, 3.6, 1.6), (0, 0.1, 1.15), studio=True)
 
 
 def build_room_asset():
