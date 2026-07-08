@@ -30,10 +30,11 @@ namespace AccentGuesser.EditorTools
 
         private const float SeatRadius = 2.4f;     // stool ring radius (metres)
         private static readonly float[] SeatAngles = { 235f, 305f, 25f, 155f };
-        // Beta Squad avatars: four seated; AJ (the fifth) hangs out by the bar.
+        // Liar's Bar-style animal cast: four seated; the cat (fifth) hangs out
+        // by the bar. The giraffe carries the toggleable stinky-breath puff.
         private static readonly string[] PlayerModels =
-            { "P1_Chunkz", "P2_Niko", "P3_Kenny", "P4_Sharky" };
-        private const string FifthAvatar = "P5_AJ";
+            { "P1_Bulldog", "P2_Giraffe", "P3_Horse", "P4_Fox" };
+        private const string FifthAvatar = "P5_Cat";
 
         [MenuItem("Say Again/Build 3D Tavern Scene")]
         public static void Build()
@@ -59,7 +60,7 @@ namespace AccentGuesser.EditorTools
                 var playerPos = new Vector3(Mathf.Cos(rad), 0f, Mathf.Sin(rad)) * (SeatRadius + 0.25f);
                 var player = Instantiate(PlayerModels[i], CharDir, playerPos, faceCentre, seats.transform);
 
-                if (PlayerModels[i] == "P2_Niko" && player != null)
+                if (PlayerModels[i] == "P2_Giraffe" && player != null)
                     WireBadBreath(player);
             }
 
@@ -88,10 +89,10 @@ namespace AccentGuesser.EditorTools
                 "3D Tavern ready",
                 "Built and opened Assets/Scenes/Tavern.unity:\n" +
                 "• Cozy tavern room, circular table, 4 seats\n" +
-                "• Beta Squad avatars: Chunkz, Niko, Kenny, Sharky at the table,\n" +
-                "  AJ chatting with the announcer at the bar\n" +
+                "• Animal cast: bulldog, giraffe, horse, fox at the table,\n" +
+                "  cat chatting with the penguin announcer at the bar\n" +
                 "• Warm candle/fire/lantern point lights + framing camera\n\n" +
-                "Press B in Play mode to toggle Niko's stinky breath.\n\n" +
+                "Press B in Play mode to toggle the giraffe's stinky breath.\n\n" +
                 "If models look untextured: select the FBXs, Materials tab, " +
                 "set Material Creation Mode to 'Standard' and Extract Materials.",
                 "Nice");

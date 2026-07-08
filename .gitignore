@@ -42,3 +42,6 @@ unity/*.user
 # ---- dotnet (temp test harness, if any lands here) ----
 bin/
 obj/
+
+# Meshy source archive (unpacked into meshy_src/)
+LiarsBar_Characters_v3.zip

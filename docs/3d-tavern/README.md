@@ -1,10 +1,12 @@
 # 3D Tavern Migration
 
 The game moved from the flat UI test scene to a stylized 3D **medieval tavern** lobby/game
-room — cozy, warm, wooden, funny-not-realistic (Liar's-Bar-adjacent). All art is generated
-procedurally in Blender (`blender/`, run `blender --background --python blender/build_all.py`)
-and assembled in Unity via **Say Again ▸ Build 3D Tavern Scene**
-(`unity/Assets/Editor/TavernSceneBuilder.cs`) into `Assets/Scenes/Tavern.unity`.
+room — cozy, warm, wooden, funny-not-realistic (Liar's-Bar-adjacent). The environment (room,
+table, stools, barrels, lighting) is generated procedurally in Blender (`blender/`, run
+`blender --background --python blender/build_all.py`). The **character cast** is a set of
+Meshy.ai animal models (source GLBs in `meshy_src/`), normalized and exported to FBX by
+`blender/import_meshy.py`. Everything is assembled in Unity via **Say Again ▸ Build 3D Tavern
+Scene** (`unity/Assets/Editor/TavernSceneBuilder.cs`) into `Assets/Scenes/Tavern.unity`.
 
 Branch: `feature/3d-world` (off `multiplayer`, which is left untouched).
 
@@ -13,7 +15,7 @@ Branch: `feature/3d-world` (off `multiplayer`, which is left untouched).
 ![Unity tavern](UNITY_tavern.png)
 
 Warm candle/fire/lantern point lighting (positions from `tavern_lights.json`), a circular
-table with exactly four seats + seated players (AJ, the fifth avatar, chats with the
+table with exactly four seats + seated players (the cat, fifth avatar, chats with the penguin
 announcer at the bar), wooden beams, hanging lantern, shelves of bottles, barrels. High 3/4
 overview camera frames the whole table and keeps its centre clear for future game UI.
 
@@ -21,31 +23,37 @@ overview camera frames the whole table and keeps its centre clear for future gam
 
 ![Hero](HERO_tavern.png)
 
-## Cast — the Beta Squad avatars
+## Cast — Liar's Bar-style animal characters
 
-Humorous stylized caricatures built from the reference photos in the repo root
-(`Chunkz.jpeg`, `Niko.jpeg`, `Kenny.jpeg`, `sharks.jpeg`, `AJ.jpeg`) — exaggerated
-cartoon avatars, not realistic likenesses. Five avatars; four seat at the table,
-the fifth hangs out at the bar in the lobby scene.
+A stylized animal cast (Meshy.ai models). Six characters; four seat at the table, the cat
+hangs out at the bar with the penguin announcer. Slots keep the `P#_` naming so the scene
+builder wiring is stable.
 
-| | Avatar | Signature features |
-|---|-----------|-----------|
-| P1 | **Chunkz** | ![](P1_Chunkz.png) huge round body, **teeth gap**, black hoodie, black cap with blonde wig fringe, chin beard |
-| P2 | **Niko** | ![](P2_Niko.png) giraffe neck + toggleable **stinky breath** (press **B**), **green sunglasses**, suit + gold tie |
-| P3 | **Kenny** | ![](P3_Kenny.png) lean boxer, shirtless + gold chain, **razor-sharp pushed-back hairline**, red gloves, goatee |
-| P4 | **Sharky** | ![](P4_Sharky.png) backwards black cap, **full beard**, black hoodie with gold patch |
-| P5 | **AJ** | ![](P5_AJ.png) big **Somali curls with golden tips**, blazer + white shirt, chain, goatee |
-| — | **Announcer Host** | ![](Announcer_Host.png) larger-than-life barkeep, handlebar mustache, monocle, bowtie, frothy mug toast |
+| | Avatar | Slot role | Features |
+|---|-----------|-----------|----------|
+| P1 | 🐶 **Bulldog** | seated | huge round body, tiny limbs |
+| P2 | 🦒 **Giraffe** | seated | long neck, goofy grin, toggleable **stinky breath** (press **B**) |
+| P3 | 🐴 **Horse** | seated | boxer with big **red gloves**, blue tank |
+| P4 | 🦊 **Fox** | seated | orange, wide eyes, arms-up pose |
+| P5 | 🐱 **Cat** | at the bar | grey, teal shirt, whiskers |
+| — | 🐧 **Penguin** | announcer/host | top hat, red bowtie, holding a mic |
 
-## Notes / next steps
+Front-of-model previews: ![](P1_Bulldog.png) ![](P2_Giraffe.png) ![](P3_Horse.png)
+![](P4_Fox.png) ![](P5_Cat.png) ![](Announcer_Host.png)
 
-- Assets are **stylized low-poly and game-ready** (props 90–300 faces, room ~2.9k, characters
-  ~6–8k with full cartoon faces — iris/highlight/lids/brows/nose/ears/teeth — capsule limbs
-  with joints, hands, shoes, and clothing details), with transforms applied, origins placed,
-  UV-unwrapped, at a consistent 1u = 1m scale. Rigging / animation are the natural follow-up;
-  body parts are kept as separate meshes (Head/Neck/Torso/Arms/Legs) for exactly that.
-- Stinky breath is a toggle on Niko's baked `BadBreath` mesh (`BadBreathToggle` component,
-  key **B**); swap in a particle system later for a livelier puff.
-- Built-in render pipeline. If a model imports untextured, select its FBX → **Materials** →
-  set Material Creation Mode to *Standard* and *Extract Materials* (batch import already maps
-  the Blender colors, verified in the render above).
+## Pipeline notes
+
+- **Source → game:** `meshy_src/*.glb` → `blender/import_meshy.py` (feet-to-origin, uniform
+  0.75 scale into 1u=1m world, transforms **baked**, giraffe gets a `BadBreath` puff) →
+  `unity/Assets/Art/Characters/generated/*.fbx` → scene builder.
+- Baking transforms is critical: Meshy GLBs carry unapplied scale, and without baking Unity's
+  FBX unit handling shrinks them to ~2cm and they vanish. `import_meshy.py` joins + applies
+  everything so object transforms are identity, like the old procedural models.
+- Heights after normalization: bulldog 1.88 m, giraffe 2.26 m, horse 1.82 m, fox 1.93 m,
+  cat 1.99 m, penguin 1.81 m; ~8–13k tris each (game-ready for multiplayer).
+- Stinky breath is a toggle on the giraffe's baked `BadBreath` mesh (`BadBreathToggle`
+  component, key **B**); swap in a particle system later for a livelier puff.
+- The old procedural Beta Squad caricatures (`gen_characters.py`) are kept in `blender/` as
+  history/fallback but are no longer the shipping cast.
+- **Next step:** these T-pose-ish models are ready for rigging + idle animations (breathing,
+  head bobs, giraffe neck sway) — the biggest remaining quality jump.

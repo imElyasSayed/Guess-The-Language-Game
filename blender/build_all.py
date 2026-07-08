@@ -62,14 +62,45 @@ def build_props():
     make(lambda: E.barrel(), "Barrel", ENV_DIR, (1.0, -1.6, 1.1), (0, 0, 0.5))
 
 
-def build_characters():
-    # front-facing 3/4 previews; characters face +Y so shoot from +Y
-    make(C.char_chunkz, "P1_Chunkz",       CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.05), studio=True)
-    make(C.char_niko,   "P2_Niko",         CHAR_DIR, (1.1, 4.0, 2.1), (0, 0.1, 1.40), studio=True)
-    make(C.char_kenny,  "P3_Kenny",        CHAR_DIR, (1.1, 3.4, 1.5), (0, 0.1, 1.10), studio=True)
-    make(C.char_sharky, "P4_Sharky",       CHAR_DIR, (1.1, 3.6, 1.6), (0, 0.1, 1.15), studio=True)
-    make(C.char_aj,     "P5_AJ",           CHAR_DIR, (1.1, 3.6, 1.7), (0, 0.1, 1.20), studio=True)
-    make(C.announcer,   "Announcer_Host",  CHAR_DIR, (1.2, 3.6, 1.6), (0, 0.1, 1.15), studio=True)
+# The shipping cast now comes from the Meshy animal models (see import_meshy.py),
+# not procedural generators. gen_characters.py is kept for history/fallback. The
+# hero shot below imports the source GLBs (which import upright + facing +Y) and
+# applies the same normalization import_meshy.py uses, so this file still owns the
+# props/room + group render without regenerating characters or round-tripping FBX.
+
+MESHY_SRC = os.path.join(ROOT, "meshy_src")
+MESHY_SCALE = 0.75  # matches import_meshy.py
+
+# source GLB -> seat/bar placement for the hero group render
+HERO_SEATED = ["Bulldog", "Giraffe", "Horse", "Fox"]
+HERO_FIFTH = "Cat"
+HERO_HOST = "Announcer"
+
+
+def _import_char(glb_name):
+    """Import a source GLB, normalize (feet->origin, uniform scale) and return its
+    feet-origin root empty, upright and facing +Y."""
+    from mathutils import Matrix
+    before = set(bpy.context.scene.objects)
+    bpy.ops.import_scene.gltf(filepath=os.path.join(MESHY_SRC, glb_name + ".glb"))
+    new = [o for o in bpy.context.scene.objects if o not in before]
+    roots = [o for o in new if o.parent is None]
+    meshes = [o for o in new if o.type == "MESH"]
+    xs, ys, zs = [], [], []
+    for o in meshes:
+        for v in o.data.vertices:
+            w = o.matrix_world @ v.co
+            xs.append(w.x); ys.append(w.y); zs.append(w.z)
+    cx, cy, minz = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2, min(zs)
+    T = Matrix.Scale(MESHY_SCALE, 4) @ Matrix.Translation((-cx, -cy, -minz))
+    for r in roots:
+        r.matrix_world = T @ r.matrix_world
+    holder = bpy.data.objects.new(glb_name, None)
+    bpy.context.scene.collection.objects.link(holder)
+    for r in roots:
+        r.parent = holder
+        r.matrix_parent_inverse = holder.matrix_world.inverted()
+    return holder
 
 
 def build_room_asset():
@@ -91,30 +122,28 @@ def build_hero():
     table = E.table_round()
     L.bake(table, loc=(0, 0.4, 0))  # nudge toward back, leaving front open to camera
 
-    # four players seated around the table, the fifth (AJ) hangs out by the bar
+    # four animals seated around the table, the cat (fifth) hangs out by the bar
     cx, cy = 0.0, 0.4
     seat_r = 2.4
     seats = [235, 305, 25, 155]  # front-left, front-right, back-right, back-left
-    builders = [C.char_chunkz, C.char_niko, C.char_kenny, C.char_sharky]
-    for ang_deg, b in zip(seats, builders):
+    for ang_deg, name in zip(seats, HERO_SEATED):
         a = math.radians(ang_deg)
         x, y = cx + seat_r * math.cos(a), cy + seat_r * math.sin(a)
         stool = E.stool()
         L.bake(stool, loc=(x, y, 0))
-        ch = b()
+        ch = _import_char(name)
         # stand just outside the stool (Unity builder does the same +0.25 offset)
         px, py = cx + (seat_r + 0.35) * math.cos(a), cy + (seat_r + 0.35) * math.sin(a)
         face = math.atan2(cy - py, cx - px) - math.pi / 2  # +Y model-front toward centre
         ch.location = (px, py, 0.0)
         ch.rotation_euler = (0, 0, face)
-    C.hide_breath()
 
-    host = C.announcer()
+    host = _import_char(HERO_HOST)
     host.location = (-E.HW + 1.7, -0.5, 0.0)    # behind the bar on the -X wall
     host.rotation_euler = (0, 0, -math.pi / 2)   # facing +X into the room
-    aj = C.char_aj()
-    aj.location = (-E.HW + 2.6, 0.6, 0.0)        # leaning at the bar, chatting
-    aj.rotation_euler = (0, 0, math.radians(-115))
+    cat = _import_char(HERO_FIFTH)
+    cat.location = (-E.HW + 2.6, 0.6, 0.0)       # leaning at the bar, chatting
+    cat.rotation_euler = (0, 0, math.radians(-115))
 
     L.render_preview(os.path.join(PREV, "HERO_tavern.png"),
                      cam_loc=(0.0, -9.0, 5.4), target=(0, 0.4, 0.9), res=960,
@@ -124,7 +153,7 @@ def build_hero():
 
 if __name__ == "__main__":
     build_props()
-    build_characters()
+    # characters now come from Meshy models via import_meshy.py (not procedural)
     build_room_asset()
     build_hero()
     print("[DONE] all assets built.")
