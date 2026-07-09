@@ -25,10 +25,11 @@ namespace AccentGuesser.Core
         public string Guess { get; internal set; }
 
         /// <summary>
-        /// True if the lock happened BEFORE the asker's hint was broadcast — the "Trust Your Ear"
-        /// tier (+15). False means locked after the hint (+10). Meaningless until HasLocked.
+        /// True once this player has spent their one question to the Keep this round. Locking
+        /// without ever asking earns the "Trust Your Ear" tier (+15); asking first drops a correct
+        /// guess to +10.
         /// </summary>
-        public bool LockedBeforeHint { get; internal set; }
+        public bool HasAsked { get; internal set; }
 
         /// <summary>Populated at REVEAL; drives per-player result display.</summary>
         public ScoreResult LastResult { get; internal set; }
@@ -43,7 +44,7 @@ namespace AccentGuesser.Core
         {
             HasLocked = false;
             Guess = null;
-            LockedBeforeHint = false;
+            HasAsked = false;
             LastResult = default;
         }
     }

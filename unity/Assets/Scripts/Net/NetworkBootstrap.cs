@@ -48,7 +48,7 @@ namespace AccentGuesser.Net
             _conn = _useRelay ? new RelayConnectionManager() : (IConnectionManager)new DirectConnectionManager();
 
             _match.OnRoundView += v => { _view = v; _haveView = true; if (v.Phase == NetPhase.Listen) { _hint = ""; _reveal = ""; } };
-            _match.OnHint += (q, a) => _hint = $"Asker asked: “{q}”\nThe Keep: “{a}”";
+            _match.OnHint += (who, q, a) => _hint = $"{who} asked: “{q}”\nThe Keep: “{a}”";
             _match.OnReveal += RenderReveal;
         }
 
@@ -167,13 +167,14 @@ namespace AccentGuesser.Net
             if (!_haveView) { GUILayout.Label("Waiting for the first round..."); return; }
 
             string me = NetworkManager.Singleton.LocalClientId.ToString();
-            bool iAmAsker = _view.AskerId == me;
+            bool meAsked = false, meLocked = false;
 
             GUILayout.Label($"Round {_view.RoundNumber} — {_view.Phase}");
             GUILayout.Label("Players:");
             foreach (var p in _view.Roster)
             {
-                string tag = p.Id == _view.AskerId ? " (asker)" : "";
+                if (p.Id == me) { meAsked = p.HasAsked; meLocked = p.HasLocked; }
+                string tag = p.HasAsked ? " [asked]" : "";
                 string locked = p.HasLocked ? " [locked]" : "";
                 GUILayout.Label($"   {p.Name}{tag}: {p.Score}  streak {p.Streak}{locked}");
             }
@@ -185,9 +186,9 @@ namespace AccentGuesser.Net
 
                 if (!string.IsNullOrEmpty(_hint)) GUILayout.Label(_hint);
 
-                if (iAmAsker && !_view.Asked)
+                if (!meAsked && !meLocked)
                 {
-                    GUILayout.Label("You are the asker — ask the Keep ONE question:");
+                    GUILayout.Label("Ask the Keep YOUR one question (before you lock):");
                     _questionInput = GUILayout.TextField(_questionInput, GUILayout.Height(26));
                     if (GUILayout.Button("Ask the Keep"))
                     {
@@ -197,7 +198,7 @@ namespace AccentGuesser.Net
                 }
 
                 GUILayout.Space(6);
-                GUILayout.Label("Your guess (lock early = +15, after the hint = +10):");
+                GUILayout.Label("Your guess (trust your ear = +15, asked the Keep = +10):");
                 _guessInput = GUILayout.TextField(_guessInput, GUILayout.Height(26));
                 if (GUILayout.Button("Lock guess", GUILayout.Height(32)))
                 {

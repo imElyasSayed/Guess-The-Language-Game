@@ -26,6 +26,7 @@ namespace AccentGuesser.Net
         public int Score;
         public int Streak;
         public bool HasLocked;
+        public bool HasAsked;   // spent their one question this round
 
         public void NetworkSerialize<T>(BufferSerializer<T> s) where T : IReaderWriter
         {
@@ -34,10 +35,12 @@ namespace AccentGuesser.Net
             s.SerializeValue(ref Score);
             s.SerializeValue(ref Streak);
             s.SerializeValue(ref HasLocked);
+            s.SerializeValue(ref HasAsked);
         }
 
         public bool Equals(PlayerView o) =>
-            Id == o.Id && Name == o.Name && Score == o.Score && Streak == o.Streak && HasLocked == o.HasLocked;
+            Id == o.Id && Name == o.Name && Score == o.Score && Streak == o.Streak
+            && HasLocked == o.HasLocked && HasAsked == o.HasAsked;
     }
 
     /// <summary>
@@ -50,9 +53,6 @@ namespace AccentGuesser.Net
         public NetPhase Phase;
         public int RoundNumber;
         public string ClipId;        // clip file path; the client loads audio locally, never the answer
-        public string AskerId;
-        public bool Asked;
-        public bool HintPublic;
         public double TimerDeadline;  // server time (NetworkManager.ServerTime.Time) the timer fires
         public PlayerView[] Roster;
 
@@ -63,9 +63,6 @@ namespace AccentGuesser.Net
             Phase = (NetPhase)phase;
             s.SerializeValue(ref RoundNumber);
             s.SerializeValue(ref ClipId);
-            s.SerializeValue(ref AskerId);
-            s.SerializeValue(ref Asked);
-            s.SerializeValue(ref HintPublic);
             s.SerializeValue(ref TimerDeadline);
 
             int count = Roster?.Length ?? 0;

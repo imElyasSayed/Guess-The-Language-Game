@@ -49,7 +49,7 @@ namespace AccentGuesser.EditModeTests
         }
 
         [Test]
-        public void StartRound_EntersListen_AssignsClipAndAsker()
+        public void StartRound_EntersListen_AssignsClip_FreshQuestions()
         {
             var m = NewMatch();
             m.AddPlayer("p1", "One");
@@ -59,9 +59,8 @@ namespace AccentGuesser.EditModeTests
             Assert.AreEqual(MatchPhase.Listen, m.Phase);
             Assert.AreEqual(1, m.RoundNumber);
             Assert.IsNotNull(m.CurrentClip);
-            Assert.IsFalse(m.Asked);
-            Assert.IsFalse(m.HintPublic);
-            Assert.AreEqual("p1", m.AskerId);
+            Assert.IsFalse(P(m, "p1").HasAsked);
+            Assert.IsFalse(P(m, "p2").HasAsked);
         }
 
         [Test]
@@ -73,82 +72,91 @@ namespace AccentGuesser.EditModeTests
             Assert.Throws<InvalidOperationException>(() => m.StartRound());
         }
 
-        // ---- Asker rotation ---------------------------------------------------
+        // ---- One question each ------------------------------------------------
 
         [Test]
-        public void AskerRotates_AcrossRounds_AndWraps()
+        public void EveryPlayer_MayAskOnce_RepeatsRejected()
         {
             var m = NewMatch();
             m.AddPlayer("p1", "One");
             m.AddPlayer("p2", "Two");
+            m.StartRound();
 
-            m.StartRound(); Assert.AreEqual("p1", m.AskerId); EndRoundByTimer(m);
-            m.StartRound(); Assert.AreEqual("p2", m.AskerId); EndRoundByTimer(m);
-            m.StartRound(); Assert.AreEqual("p1", m.AskerId, "rotation wraps back to the first player");
+            Assert.IsTrue(m.MarkAsked("p1"), "every player owns a question");
+            Assert.IsTrue(m.MarkAsked("p2"), "…including the second player, same round");
+            Assert.IsFalse(m.MarkAsked("p1"), "second ask rejected (one question each)");
+            Assert.IsFalse(m.MarkAsked("ghost"), "unknown player rejected");
         }
 
         [Test]
-        public void NonAsker_CannotAsk_AskerCan()
+        public void LockedPlayer_CannotAsk_AskFirstThenGuess()
         {
             var m = NewMatch();
             m.AddPlayer("p1", "One");
-            m.AddPlayer("p2", "Two");
-            m.StartRound(); // asker = p1
+            m.AddPlayer("p2", "Two"); // keeps the round open past p1's lock
+            m.StartRound();
 
-            Assert.IsFalse(m.MarkAsked("p2"), "non-asker must be rejected");
-            Assert.IsFalse(m.Asked);
-            Assert.IsTrue(m.MarkAsked("p1"), "asker may ask once");
-            Assert.IsTrue(m.Asked);
-            Assert.IsFalse(m.MarkAsked("p1"), "second ask rejected (one-question lock)");
+            m.LockGuess("p1", Correct(m));
+            Assert.IsFalse(m.MarkAsked("p1"), "a locked guess seals the round — no asking after");
+        }
+
+        [Test]
+        public void Questions_RefreshEachRound()
+        {
+            var m = NewMatch();
+            m.AddPlayer("p1", "One");
+            m.StartRound();
+            Assert.IsTrue(m.MarkAsked("p1"));
+            EndRoundByTimer(m);
+
+            m.StartRound();
+            Assert.IsTrue(m.MarkAsked("p1"), "a new round grants a fresh question");
         }
 
         // ---- Scoring tiers (Trust Your Ear) -----------------------------------
 
         [Test]
-        public void LockBeforeHint_Correct_Scores15()
+        public void NoQuestion_Correct_Scores15()
         {
             var m = NewMatch();
             m.AddPlayer("p1", "One");
             m.StartRound();
 
-            m.LockGuess("p1", Correct(m));   // before any hint
+            m.LockGuess("p1", Correct(m));   // trusted the ear, never asked
             Assert.AreEqual(MatchPhase.Reveal, m.Phase);
             Assert.AreEqual(15, P(m, "p1").Score);
             Assert.AreEqual(1, P(m, "p1").Streak);
         }
 
         [Test]
-        public void LockAfterHint_Correct_Scores10()
+        public void AskedThenLocked_Correct_Scores10()
         {
             var m = NewMatch();
             m.AddPlayer("p1", "One");
             m.StartRound();
 
             m.MarkAsked("p1");
-            m.PublishHint();
-            m.LockGuess("p1", Correct(m));   // after the hint
+            m.LockGuess("p1", Correct(m));   // leaned on the Keep
             Assert.AreEqual(10, P(m, "p1").Score);
         }
 
         [Test]
-        public void TierIsPerPlayer_ByLockTiming()
+        public void TierIsPerPlayer_ByOwnQuestion()
         {
             var m = NewMatch();
-            m.AddPlayer("p1", "One");   // asker
+            m.AddPlayer("p1", "One");
             m.AddPlayer("p2", "Two");
             m.StartRound();
 
-            // p2 trusts their ear and locks early (+15); p1 asks, publishes, then locks (+10).
-            m.LockGuess("p2", Correct(m));
-            Assert.IsFalse(m.HintPublic);
-
+            // p1 spends their question; p2 never asks. Hearing SOMEONE ELSE'S answer is free —
+            // only your own question drops you to the +10 tier.
             m.MarkAsked("p1");
-            m.PublishHint();
+            m.LockGuess("p2", Correct(m));
             m.LockGuess("p1", Correct(m));
 
             Assert.AreEqual(MatchPhase.Reveal, m.Phase);
-            Assert.AreEqual(15, P(m, "p2").Score, "early lock earns the +15 tier");
-            Assert.AreEqual(10, P(m, "p1").Score, "post-hint lock earns the +10 tier");
+            Assert.AreEqual(15, P(m, "p2").Score, "no question of their own = +15 tier");
+            Assert.AreEqual(10, P(m, "p1").Score, "asked the Keep = +10 tier");
         }
 
         [Test]
@@ -261,7 +269,6 @@ namespace AccentGuesser.EditModeTests
 
             m.StartRound();
             m.MarkAsked("solo");
-            m.PublishHint();
             m.LockGuess("solo", Correct(m));            // asked -> +10
             Assert.AreEqual(25, P(m, "solo").Score);
         }

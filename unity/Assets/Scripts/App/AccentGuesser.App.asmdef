@@ -1,16 +1,15 @@
 {
-    "name": "AccentGuesser.Editor",
-    "rootNamespace": "AccentGuesser.EditorTools",
+    "name": "AccentGuesser.App",
+    "rootNamespace": "AccentGuesser.App",
     "references": [
-        "AccentGuesser.App",
         "AccentGuesser.Core",
         "AccentGuesser.Net",
+        "AccentGuesser.Services",
         "AccentGuesser.World",
-        "Unity.Netcode.Runtime"
+        "Unity.Netcode.Runtime",
+        "UnityEngine.UI"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

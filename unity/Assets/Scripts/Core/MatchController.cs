@@ -23,10 +23,11 @@ namespace AccentGuesser.Core
     ///
     /// Lifecycle: Setup --StartRound--> Listen --(all locked | ExpireTimer)--> Reveal --StartRound--> Listen ...
     ///
-    /// Scoring (per-player "Trust Your Ear"):
-    ///   locked BEFORE the hint + correct => +15   (LockedBeforeHint == true)
-    ///   locked AFTER  the hint + correct => +10
-    ///   wrong or never locked            =>  +0 and the streak resets.
+    /// Every player gets ONE question to the Keep per round, and asking is only possible before
+    /// locking (ask first, then guess). Scoring (per-player "Trust Your Ear"):
+    ///   correct without having asked => +15   (trusted your ear)
+    ///   correct after your question  => +10
+    ///   wrong or never locked        =>  +0 and the streak resets.
     /// </summary>
     public sealed class MatchController
     {
@@ -34,7 +35,6 @@ namespace AccentGuesser.Core
         private readonly Random _rng;
         private readonly List<Player> _roster = new List<Player>();
         private readonly List<Player> _pending = new List<Player>();
-        private int _askerRotation;
 
         public MatchController(IClipCatalog catalog, Random rng)
         {
@@ -53,15 +53,6 @@ namespace AccentGuesser.Core
 
         /// <summary>The hidden answer. HOST-ONLY — never replicate this to clients before REVEAL.</summary>
         public Lang Target { get; private set; }
-
-        /// <summary>Id of the player who may ask the Keep this round.</summary>
-        public string AskerId { get; private set; }
-
-        /// <summary>True once the asker has consumed the round's single question.</summary>
-        public bool Asked { get; private set; }
-
-        /// <summary>True once the hint has been broadcast; flips the lock tier from +15 to +10.</summary>
-        public bool HintPublic { get; private set; }
 
         // ---- Roster management ------------------------------------------------
 
@@ -85,7 +76,7 @@ namespace AccentGuesser.Core
         /// <summary>
         /// Remove a player (disconnect or leave). Returns false if unknown. If the player leaves
         /// mid-LISTEN they stop gating REVEAL, so this may trigger REVEAL when the remaining
-        /// players have all locked. A leaving asker who had not asked simply forfeits the hint.
+        /// players have all locked. A leaver simply forfeits any unused question.
         /// </summary>
         public bool RemovePlayer(string id)
         {
@@ -104,8 +95,8 @@ namespace AccentGuesser.Core
 
         /// <summary>
         /// Begin a new round. Valid from SETUP or REVEAL. Merges pending joiners, draws a clip +
-        /// hidden target, assigns the rotating asker, resets per-round state, and enters LISTEN.
-        /// Throws if a round is already live or the roster is empty.
+        /// hidden target, resets per-round state (everyone's question refreshes), and enters
+        /// LISTEN. Throws if a round is already live or the roster is empty.
         /// </summary>
         public void StartRound(string difficulty = null, string region = null)
         {
@@ -120,11 +111,6 @@ namespace AccentGuesser.Core
             CurrentClip = round.Clip;
             Target = round.Target;
 
-            AskerId = _roster[_askerRotation % _roster.Count].Id;
-            _askerRotation++;
-
-            Asked = false;
-            HintPublic = false;
             foreach (var p in _roster) p.ResetForRound();
 
             RoundNumber++;
@@ -132,34 +118,24 @@ namespace AccentGuesser.Core
         }
 
         /// <summary>
-        /// Consume the round's single question on behalf of the asker. Returns false if not in
-        /// LISTEN, already asked, or the caller is not the asker (one-question, asker-only lock).
-        /// The host then fetches the oracle answer and calls <see cref="PublishHint"/>.
+        /// Spend <paramref name="playerId"/>'s one question for this round. Returns false outside
+        /// LISTEN, for an unknown player, on a repeat ask, or once they have locked (ask first,
+        /// then guess). The host then fetches the oracle answer and broadcasts it to the table.
         /// </summary>
         public bool MarkAsked(string playerId)
         {
-            if (Phase != MatchPhase.Listen || Asked) return false;
-            if (playerId != AskerId) return false;
-            Asked = true;
+            if (Phase != MatchPhase.Listen) return false;
+            var p = Find(playerId);
+            if (p == null || p.HasAsked || p.HasLocked) return false;
+            p.HasAsked = true;
             return true;
         }
 
         /// <summary>
-        /// Flip the round into the "hint is public" state — called by the host once the oracle
-        /// answer has been broadcast to the table. Guesses locked from now on score the +10 tier.
-        /// No-op outside LISTEN.
-        /// </summary>
-        public void PublishHint()
-        {
-            if (Phase != MatchPhase.Listen) return;
-            HintPublic = true;
-        }
-
-        /// <summary>
         /// Lock a player's guess for this round. First lock is final; later locks are ignored.
-        /// The tier (+15 vs +10) is fixed here by whether the hint is public yet. Returns false
-        /// outside LISTEN, for an unknown player, or on a repeat lock. May trigger REVEAL when
-        /// this is the last player to lock.
+        /// The tier (+15 vs +10) follows from whether THIS player spent their question first.
+        /// Returns false outside LISTEN, for an unknown player, or on a repeat lock. May trigger
+        /// REVEAL when this is the last player to lock.
         /// </summary>
         public bool LockGuess(string playerId, string guess)
         {
@@ -169,7 +145,6 @@ namespace AccentGuesser.Core
 
             p.HasLocked = true;
             p.Guess = guess ?? string.Empty;
-            p.LockedBeforeHint = !HintPublic;
 
             MaybeReveal();
             return true;
@@ -199,10 +174,8 @@ namespace AccentGuesser.Core
             {
                 bool correct = p.HasLocked
                     && p.Guess.Trim().Equals(Target.Language, StringComparison.OrdinalIgnoreCase);
-                // After-hint lock counts as "asked" (+10); before-hint counts as "not asked" (+15).
-                bool asked = p.HasLocked && !p.LockedBeforeHint;
-
-                var result = ScoreCalculator.Evaluate(correct, asked, p.Streak);
+                // Your own question is what taxes the tier: never asked = +15, asked = +10.
+                var result = ScoreCalculator.Evaluate(correct, p.HasAsked, p.Streak);
                 p.Score += result.Points;
                 p.Streak = result.NewStreak;
                 p.LastResult = result;
