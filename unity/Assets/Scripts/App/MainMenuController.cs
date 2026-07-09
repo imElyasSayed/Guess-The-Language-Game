@@ -36,8 +36,9 @@ namespace AccentGuesser.App
         [Tooltip("If set, the host uses the real oracle relay; otherwise the offline MockOracleClient.")]
         [SerializeField] private string _oracleRelayBaseUrl = "";
 
-        [Tooltip("Use Unity Relay (share a join code). Off = direct IP for LAN / same-machine.")]
-        [SerializeField] private bool _useRelay = false;
+        [Tooltip("Use Unity Relay (share a short join code that works over the internet). " +
+                 "Off = direct IP for LAN / same-machine testing.")]
+        [SerializeField] private bool _useRelay = true;
 
         private enum Screen { Menu, Join, Lobby, Licenses }
 
